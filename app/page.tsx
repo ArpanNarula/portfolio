@@ -1,8 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 export default function Home() {
+  const [open, setOpen] = useState(false);
+
   const skills = [
     "React.js",
     "Next.js",
@@ -27,55 +31,135 @@ export default function Home() {
         <div className="absolute right-[-200px] bottom-20 w-[500px] h-[500px] rounded-full bg-gradient-to-r from-green-400 via-teal-400 to-blue-500 opacity-10 blur-3xl" />
       </div>
 
-      {/* NAVBAR */}
-      <motion.nav
-        initial={{ y: -30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        className="fixed top-6 left-0 right-0 mx-auto max-w-6xl px-6 flex items-center justify-between z-20 backdrop-blur-lg"
+     {/* NAVBAR */}
+<motion.nav
+  initial={{ y: -30, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ duration: 0.6 }}
+  className="fixed top-6 left-0 right-0 mx-auto max-w-6xl px-6 flex items-center justify-between z-20 backdrop-blur-lg"
+>
+  {/* Logo */}
+  <div className="text-white font-semibold text-lg">
+    arpan.dev
+  </div>
+
+  {/* Desktop Links */}
+  <div className="hidden md:flex gap-6 text-gray-300 font-medium">
+    {["projects", "skills", "experience", "contact"].map((item) => (
+      <a
+        key={item}
+        href={`#${item}`}
+        className="hover:text-white hover:underline underline-offset-8 transition"
       >
-        <div className="text-white font-semibold text-lg">arpan.dev</div>
+        {item.charAt(0).toUpperCase() + item.slice(1)}
+      </a>
+    ))}
+  </div>
 
-        <div className="hidden md:flex gap-6 text-gray-300 font-medium">
-          {["projects", "skills", "experience", "contact"].map((item) => (
-            <a
-              key={item}
-              href={`#${item}`}
-              className="hover:text-white hover:underline underline-offset-8 transition"
-            >
-              {item.charAt(0).toUpperCase() + item.slice(1)}
-            </a>
-          ))}
-        </div>
+  {/* Right Side */}
+<div className="flex items-center gap-3">
 
-        <div className="flex gap-3">
-          <a
-            href="https://github.com/ArpanNarula"
-            target="_blank"
-            rel="noreferrer"
-            className="hidden sm:inline-block px-4 py-2 rounded-lg bg-white text-black font-medium hover:scale-105 transition"
-          >
-            GitHub
-          </a>
+  {/* Desktop Buttons */}
+  <div className="hidden sm:flex gap-3">
+    <a
+      href="https://github.com/ArpanNarula"
+      target="_blank"
+      rel="noreferrer"
+      className="px-4 py-2 rounded-lg bg-white text-black font-medium"
+    >
+      GitHub
+    </a>
 
-          <a
-            href="https://linkedin.com/in/arpan-narula-4a4793253"
-            target="_blank"
-            rel="noreferrer"
-            className="hidden sm:inline-block px-4 py-2 rounded-lg border border-white hover:scale-105 transition"
-          >
-            LinkedIn
-          </a>
+    <a
+      href="https://linkedin.com/in/arpan-narula-4a4793253"
+      target="_blank"
+      rel="noreferrer"
+      className="px-4 py-2 rounded-lg border border-white"
+    >
+      LinkedIn
+    </a>
 
-          <a
-            href="/resume.pdf"
-            download
-            className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:brightness-110 transition"
-          >
-            Resume
-          </a>
-        </div>
-      </motion.nav>
+    <a
+      href="/resume.pdf"
+      download
+      className="px-4 py-2 rounded-lg bg-blue-600 text-white"
+    >
+      Resume
+    </a>
+  </div>
+
+  {/* Mobile Resume Button */}
+  <a
+    href="/resume.pdf"
+    download
+    className="sm:hidden px-4 py-2 rounded-lg bg-blue-600 text-white"
+  >
+    Resume
+  </a>
+
+  {/* Mobile Hamburger */}
+  <button
+    className="sm:hidden text-white"
+    onClick={() => setOpen(!open)}
+  >
+    {open ? <X size={28} /> : <Menu size={28} />}
+  </button>
+
+</div>
+
+ 
+</motion.nav>
+
+{/* Mobile Dropdown Menu */}
+{open && (
+  <motion.div
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    className="fixed top-24 left-0 right-0 mx-auto w-[90%] bg-gray-900 rounded-2xl p-6 z-30 sm:hidden shadow-xl"
+  >
+    <div className="flex flex-col gap-4 text-gray-200 font-medium">
+      {["projects", "skills", "experience", "contact"].map((item) => (
+        <a
+          key={item}
+          href={`#${item}`}
+          onClick={() => setOpen(false)}
+          className="hover:text-white transition"
+        >
+          {item.charAt(0).toUpperCase() + item.slice(1)}
+        </a>
+      ))}
+
+      <hr className="border-gray-700" />
+
+      <a
+        href="https://github.com/ArpanNarula"
+        target="_blank" rel="noreferrer"
+        onClick={() => setOpen(false)}
+        className="text-blue-400"
+      >
+        GitHub →
+      </a>
+
+      <a
+        href="https://linkedin.com/in/arpan-narula-4a4793253"
+        target="_blank" rel="noreferrer"
+        onClick={() => setOpen(false)}
+        className="text-blue-400"
+      >
+        LinkedIn →
+      </a>
+
+      <a
+        href="/resume.pdf"
+        download
+        onClick={() => setOpen(false)}
+        className="text-blue-400"
+      >
+        Resume ↓
+      </a>
+    </div>
+  </motion.div>
+)}
 
       {/* HERO */}
       <motion.section
@@ -83,7 +167,7 @@ export default function Home() {
         initial="hidden"
         animate="show"
         transition={{ duration: 0.8 }}
-        className="max-w-4xl mx-auto text-center pt-20 pb-10"
+        className="max-w-4xl mx-auto text-center pt-28 pb-10"
       >
         <h1 className="text-5xl md:text-6xl font-bold leading-tight">
           Hi, I'm Arpan Narula 👋
@@ -110,14 +194,6 @@ export default function Home() {
             className="px-6 py-2 rounded-xl border border-white hover:scale-105 transition"
           >
             LinkedIn
-          </a>
-
-          <a
-            href="/resume.pdf"
-            download
-            className="px-6 py-2 rounded-xl bg-blue-600 text-white hover:brightness-110 transition"
-          >
-            Resume
           </a>
         </div>
       </motion.section>
@@ -146,9 +222,8 @@ export default function Home() {
           Projects 🚀
         </h2>
 
-        {/* Updated grid for 3 projects */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {/* Project 1 */}
+          {/* JudicialEase */}
           <motion.article
             whileHover={{ scale: 1.04 }}
             className="p-6 bg-gray-900 rounded-2xl shadow-lg"
@@ -167,7 +242,7 @@ export default function Home() {
             </a>
           </motion.article>
 
-          {/* Project 2 */}
+          {/* UnstockAI */}
           <motion.article
             whileHover={{ scale: 1.04 }}
             className="p-6 bg-gray-900 rounded-2xl shadow-lg"
@@ -186,16 +261,14 @@ export default function Home() {
             </a>
           </motion.article>
 
-          {/* Project 3 (IMDB Added) */}
+          {/* IMDB */}
           <motion.article
             whileHover={{ scale: 1.04 }}
             className="p-6 bg-gray-900 rounded-2xl shadow-lg"
           >
-            <h3 className="text-xl font-bold">
-              IMDB Sentiment Analysis
-            </h3>
+            <h3 className="text-xl font-bold">IMDB Sentiment Analysis</h3>
             <p className="text-gray-400 mt-2">
-              NLP pipeline with TensorFlow (92% accuracy), deployed with Gradio on Hugging Face.
+              NLP pipeline with TensorFlow (92% accuracy), deployed on Hugging Face.
             </p>
 
             <div className="flex gap-4 mt-4">
@@ -203,7 +276,7 @@ export default function Home() {
                 href="https://huggingface.co/spaces/Ravi1227/movie-sentiment-analysis"
                 target="_blank"
                 rel="noreferrer"
-                className="text-blue-400 inline-block"
+                className="text-blue-400"
               >
                 Live →
               </a>
@@ -212,7 +285,7 @@ export default function Home() {
                 href="https://github.com/ravi1215/IMDBMovie-review-sentiment-analysis"
                 target="_blank"
                 rel="noreferrer"
-                className="text-blue-400 inline-block"
+                className="text-blue-400"
               >
                 GitHub →
               </a>
@@ -242,18 +315,14 @@ export default function Home() {
       <section id="experience" className="mt-20 text-center">
         <h2 className="text-3xl font-semibold mb-6">Experience 💼</h2>
 
-        <div className="max-w-3xl mx-auto grid gap-6 text-left">
-          <div className="bg-gray-900 p-6 rounded-2xl">
-            <h3 className="text-lg font-bold">
-              Web Developer Intern — Innate Infotech
-            </h3>
-            <p className="text-gray-400 mt-2">
-              Built frontend + backend features (PHP, MySQL), improved UI/UX and delivered production fixes.
-            </p>
-            <p className="text-gray-500 mt-2 text-sm">
-              May 2025 — July 2025
-            </p>
-          </div>
+        <div className="max-w-3xl mx-auto text-left bg-gray-900 p-6 rounded-2xl">
+          <h3 className="text-lg font-bold">
+            Web Developer Intern — Innate Infotech
+          </h3>
+          <p className="text-gray-400 mt-2">
+            Built frontend + backend features (PHP, MySQL), improved UI/UX and delivered fixes.
+          </p>
+          <p className="text-gray-500 mt-2 text-sm">May 2025 — July 2025</p>
         </div>
       </section>
 
@@ -268,12 +337,69 @@ export default function Home() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="mt-20 text-center pb-24">
-        <h2 className="text-3xl font-semibold">Contact 📩</h2>
-        <p className="text-gray-400 mt-3">
-          Email: arpannarula9999@gmail.com
-        </p>
-      </section>
+<section
+  id="contact"
+  className="mt-24 text-center pb-32 max-w-3xl mx-auto"
+>
+  <h2 className="text-3xl font-semibold mb-4">
+    Contact 📩
+  </h2>
+
+  <p className="text-gray-400 mb-10">
+    Feel free to reach out for opportunities, collaborations, or just a quick chat.
+  </p>
+
+  {/* Formspree Contact Form */}
+  <form
+    action="https://formspree.io/f/mojnlnej"
+    method="POST"
+    className="flex flex-col gap-5 bg-gray-900 p-8 rounded-2xl shadow-lg"
+  >
+    {/* Name */}
+    <input
+      type="text"
+      name="name"
+      placeholder="Your Name"
+      required
+      className="w-full px-4 py-3 rounded-xl bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+
+    {/* Email */}
+    <input
+      type="email"
+      name="email"
+      placeholder="Your Email"
+      required
+      className="w-full px-4 py-3 rounded-xl bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+
+    {/* Message */}
+    <textarea
+      name="message"
+      placeholder="Your Message"
+      required
+      rows={5}
+      className="w-full px-4 py-3 rounded-xl bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+
+    {/* Button */}
+    <button
+      type="submit"
+      className="w-full py-3 rounded-xl bg-blue-600 text-white font-semibold hover:brightness-110 transition"
+    >
+      Send Message 🚀
+    </button>
+  </form>
+
+  {/* Email fallback */}
+  <p className="text-gray-500 mt-8 text-sm">
+    Or email me directly at{" "}
+    <span className="text-gray-300">
+      arpannarula9999@gmail.com
+    </span>
+  </p>
+</section>
+
     </main>
   );
 }
