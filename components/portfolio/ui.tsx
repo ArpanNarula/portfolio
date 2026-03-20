@@ -13,7 +13,7 @@ type RevealProps = {
 type SectionHeadingProps = {
   eyebrow: string;
   title: string;
-  description: string;
+  description?: string;
   align?: "left" | "center";
 };
 
@@ -57,7 +57,9 @@ export function SectionHeading({
       <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-5xl">
         {title}
       </h2>
-      <p className="mt-5 text-base leading-8 text-slate-400">{description}</p>
+      {description ? (
+        <p className="mt-5 text-base leading-8 text-slate-400">{description}</p>
+      ) : null}
     </div>
   );
 }

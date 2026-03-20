@@ -37,99 +37,75 @@ export type SkillGroup = {
 };
 
 export const navItems = [
-  { label: "Featured", href: "#featured-projects" },
-  { label: "What I Build", href: "#what-i-build" },
+  { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const heroRoles = [
-  "Backend Developer",
-  "API Engineer",
-  "System Builder",
+  "Software Developer",
+  "Full Stack Developer",
+  "Product Builder",
 ];
 
 export const heroHighlights = [
-  "REST APIs",
-  "MongoDB + Firebase",
-  "Analytics Pipelines",
+  "React + Next.js",
+  "Node + Express",
+  "MongoDB + SQL",
   "AI Integrations",
 ];
 
 export const proofPoints = [
   {
-    title: "Featured backend systems",
-    value: "3 recruiter-led projects",
+    title: "Projects",
+    value: "5 projects on the site",
   },
   {
-    title: "Live products",
-    value: "Inventory, legal, and support workflows",
+    title: "Work I enjoy",
+    value: "Web apps, APIs, dashboards, and useful tools",
   },
   {
-    title: "Backend focus",
-    value: "APIs, data modeling, and service orchestration",
-  },
-];
-
-export const whatIBuild = [
-  {
-    title: "Scalable backend systems",
-    description:
-      "Backend architecture built around clean service layers, resilient request flows, and product-ready logic.",
-  },
-  {
-    title: "REST APIs for real applications",
-    description:
-      "Structured endpoints for analytics, ticketing, legal search, and business-facing dashboards.",
-  },
-  {
-    title: "Data pipelines and processing",
-    description:
-      "Backend workflows that transform raw data into forecasts, summaries, search results, and insights.",
-  },
-  {
-    title: "AI-powered backend logic",
-    description:
-      "Application backends that coordinate external AI services without turning the product into a demo-only experience.",
+    title: "Looking for",
+    value: "Software roles where I can keep building",
   },
 ];
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: "Backend",
-    subtitle: "Core delivery stack",
+    title: "Languages & Frameworks",
+    subtitle: "Main stack",
     items: [
+      "React.js",
+      "Next.js",
       "Node.js",
       "Express.js",
-      "REST API Design",
-      "Authentication (JWT)",
-      "API Integration",
-      "Service-Oriented Logic",
+      "Python",
+      "Tailwind CSS",
     ],
   },
   {
-    title: "Database",
-    subtitle: "Data design and querying",
+    title: "Data & Backend",
+    subtitle: "APIs and storage",
     items: [
       "MongoDB",
       "SQL",
       "Firebase",
+      "REST APIs",
       "Schema Design",
-      "Query Optimization",
-      "Document Indexing",
+      "Authentication",
     ],
   },
   {
     title: "Tools",
-    subtitle: "Shipping and iteration",
+    subtitle: "Everyday workflow",
     items: [
-      "GitHub Actions",
-      "CI/CD",
-      "Vercel Deployments",
-      "Python Pipelines",
-      "Analytics Dashboards",
-      "Debugging Workflows",
+      "Git",
+      "GitHub",
+      "Vercel",
+      "Postman",
+      "Framer Motion",
+      "Figma",
     ],
   },
 ];
@@ -137,24 +113,24 @@ export const skillGroups: SkillGroup[] = [
 export const featuredProjects: FeaturedProject[] = [
   {
     title: "StockPilot AI",
-    label: "Inventory Forecasting & Analytics Platform",
+    label: "Inventory Forecasting Platform",
     description:
-      "StockPilot AI is a backend-driven inventory management and forecasting platform that helps businesses optimize stock levels, prevent overstocking, and avoid stockouts using real-time data and predictive analytics.",
+      "StockPilot AI helps businesses track inventory, spot deadstock, and make better restocking decisions using analytics and forecasting.",
     liveUrl:
       "https://stockpilot-ai-4ytqeyja8gw56sbxrwko4y.streamlit.app",
     githubUrl: "https://github.com/ArpanNarula/StockPilot-AI",
     backendContributions: [
-      "Designed and implemented RESTful APIs using Node.js and Express.js for inventory tracking, analytics, and forecasting workflows.",
-      "Developed MongoDB schema to manage users, products, SKU-level inventory data, and forecasting outputs.",
-      "Built backend pipelines to process inventory data and generate insights such as deadstock detection and restock recommendations.",
-      "Integrated external AI APIs (Gemini) to generate automated product insights and summaries.",
-      "Handled data flow between frontend dashboards and backend services for real-time visualization.",
+      "Built APIs with Node.js and Express.js for inventory tracking, analytics, and forecasting flows.",
+      "Designed MongoDB models for users, products, SKU-level stock data, and forecast results.",
+      "Added processing pipelines for deadstock detection and restock recommendations.",
+      "Integrated Gemini to generate product insights and summaries inside the app.",
+      "Connected backend services with dashboards for real-time business visibility.",
     ],
     keyFeatures: [
-      "Real-time inventory tracking across products",
-      "Demand forecasting and restock recommendations",
-      "Deadstock identification and SKU performance analytics",
-      "Interactive dashboards for business insights",
+      "Real-time inventory tracking",
+      "Forecasting and restock suggestions",
+      "Deadstock and SKU analytics",
+      "Business dashboards and insights",
     ],
     techStack: [
       "Node.js",
@@ -164,11 +140,11 @@ export const featuredProjects: FeaturedProject[] = [
       "REST APIs",
       "Gemini API",
     ],
-    focusAreas: ["API", "Database", "AI"],
+    focusAreas: ["Inventory", "Forecasting", "Analytics"],
     architecture: [
       "Dashboard",
-      "Express APIs",
-      "Forecast Pipelines",
+      "API Layer",
+      "Forecast Logic",
       "MongoDB",
     ],
     accent: {
@@ -183,23 +159,23 @@ export const featuredProjects: FeaturedProject[] = [
   },
   {
     title: "SupportOps Assistant",
-    label: "Support Engineering & Ticketing Platform",
+    label: "Support Ticketing Platform",
     description:
-      "SupportOps Assistant is a backend-centric support management platform designed to streamline ticket handling, issue tracking, and debugging workflows for engineering teams.",
+      "SupportOps Assistant is a support management tool for engineering teams to handle tickets, recurring issues, and debugging workflows in one place.",
     liveUrl: "https://supportops-assistant.vercel.app/",
     githubUrl: "https://github.com/ArpanNarula/SupportOps-Assistant",
     backendContributions: [
-      "Built RESTful APIs for ticket creation, updates, and workflow management including status, severity, and ownership.",
-      "Designed MongoDB schema for efficient storage and querying of ticket data and analytics.",
-      "Implemented backend logic for tracking recurring issues and generating performance insights.",
-      "Integrated AI-based root cause analysis using external APIs to assist in debugging.",
-      "Developed analytics endpoints to power dashboards for support performance monitoring.",
+      "Built APIs for ticket creation, updates, status changes, severity, and ownership.",
+      "Designed MongoDB collections for ticket data, issue history, and performance metrics.",
+      "Added logic for spotting recurring issues and surfacing useful support insights.",
+      "Integrated external AI tools for root-cause suggestions during debugging.",
+      "Created analytics endpoints used by dashboards to track support performance.",
     ],
     keyFeatures: [
-      "Ticket lifecycle management system",
-      "Issue prioritization and assignment workflows",
-      "Analytics dashboards for performance tracking",
-      "AI-assisted debugging and root cause suggestions",
+      "Ticket lifecycle management",
+      "Assignment and prioritization flows",
+      "Support analytics dashboards",
+      "AI-assisted debugging suggestions",
     ],
     techStack: [
       "Node.js",
@@ -208,11 +184,11 @@ export const featuredProjects: FeaturedProject[] = [
       "REST APIs",
       "Claude API",
     ],
-    focusAreas: ["API", "Analytics", "AI"],
+    focusAreas: ["Support", "Tickets", "Analytics"],
     architecture: [
       "Support UI",
       "Ticket APIs",
-      "Insight Services",
+      "Insight Logic",
       "MongoDB",
     ],
     accent: {
@@ -226,35 +202,35 @@ export const featuredProjects: FeaturedProject[] = [
   },
   {
     title: "CourtIQ",
-    label: "AI-Powered Legal Research Platform",
+    label: "Legal Research Platform",
     description:
-      "CourtIQ is an AI-driven legal research platform that enables users to upload legal documents and retrieve relevant case insights, improving research efficiency.",
+      "CourtIQ is a legal research platform where users can upload documents, search through them, and get relevant case insights faster.",
     liveUrl: "https://judicial-ease.vercel.app",
     githubUrl: "https://github.com/ArpanNarula/CourtIQ",
     backendContributions: [
-      "Built backend APIs for document upload, processing, and search functionality.",
-      "Managed document metadata and indexing for efficient retrieval of relevant legal content.",
-      "Integrated AI-based summarization workflows to extract key insights from large legal documents.",
-      "Designed data flow between frontend search interface and backend processing services.",
+      "Built APIs for document upload, processing, and search.",
+      "Handled metadata and indexing so legal content could be retrieved more efficiently.",
+      "Added summarization workflows to pull useful insights from large documents.",
+      "Connected the search interface with backend processing services and stored results.",
     ],
     keyFeatures: [
       "Document upload and processing",
-      "Intelligent legal search system",
-      "Automated summarization of case documents",
-      "Case insight retrieval workflows",
+      "Search across legal content",
+      "Document summaries",
+      "Faster research workflow",
     ],
     techStack: [
       "Node.js",
       "Express.js",
       "Firebase",
       "REST API",
-      "AI Summarization",
+      "AI Workflows",
     ],
-    focusAreas: ["Upload", "Search", "AI"],
+    focusAreas: ["Documents", "Search", "Summaries"],
     architecture: [
       "Upload UI",
       "Processing APIs",
-      "Search + Summary",
+      "Search Logic",
       "Firebase",
     ],
     accent: {
@@ -271,9 +247,9 @@ export const featuredProjects: FeaturedProject[] = [
 export const otherProjects: OtherProject[] = [
   {
     title: "Finio",
-    label: "AI-Powered Personal Finance App",
+    label: "Personal Finance App",
     description:
-      "UI and UX focused finance experience with budgeting, transaction tracking, and a conversational assistant for young users.",
+      "Finio is more of a UI and product design project, focused on budgeting flows, dashboards, and a clean finance experience for younger users.",
     liveUrl: "https://finio-gamma.vercel.app/",
     githubUrl: "https://github.com/ArpanNarula/Finio",
     techStack: ["React.js", "Next.js", "Tailwind CSS", "Figma"],
@@ -288,9 +264,9 @@ export const otherProjects: OtherProject[] = [
   },
   {
     title: "IMDB Sentiment Analysis",
-    label: "ML / NLP Side Project",
+    label: "Movie Review Sentiment App",
     description:
-      "A lightweight sentiment-analysis application kept as a supporting project to show experimentation beyond backend systems.",
+      "A smaller ML side project that predicts sentiment for movie reviews and was useful for experimenting with NLP and model deployment.",
     liveUrl:
       "https://huggingface.co/spaces/Ravi1227/movie-sentiment-analysis",
     githubUrl:
@@ -312,10 +288,10 @@ export const experience = {
   company: "Innate Infotech",
   period: "May 2025 - July 2025",
   summary:
-    "Designed and optimized backend APIs and database interactions using Node.js and MySQL, improving performance and handling concurrent requests.",
+    "Worked on both frontend and backend tasks, handled database changes, fixed bugs, and shipped product updates across ongoing client work.",
   highlights: [
-    "Improved request handling for production-style backend flows.",
-    "Worked on backend logic and database reliability alongside product delivery.",
-    "Shipped changes in a team environment with a strong focus on maintainability.",
+    "Built and updated features using PHP and MySQL.",
+    "Handled bug fixes, UI improvements, and backend changes together.",
+    "Worked on day-to-day product updates in a fast-moving team setup.",
   ],
 };

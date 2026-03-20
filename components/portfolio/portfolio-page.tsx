@@ -17,7 +17,6 @@ import {
   Workflow,
   X,
 } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
 import { useState } from "react";
 import {
   experience,
@@ -28,7 +27,6 @@ import {
   otherProjects,
   proofPoints,
   skillGroups,
-  whatIBuild,
 } from "@/components/portfolio/data";
 import {
   FeaturedProjectCard,
@@ -54,28 +52,26 @@ const fadeItem = {
 
 const heroFloatingIcons = [
   {
-    label: "Node APIs",
+    label: "Node.js",
     icon: Server,
     className: "left-[-10px] top-14 animate-float-slow",
   },
   {
-    label: "DB Models",
+    label: "MongoDB",
     icon: Database,
     className: "right-[-8px] top-8 animate-float-delayed",
   },
   {
-    label: "REST",
+    label: "APIs",
     icon: Network,
     className: "right-10 bottom-8 animate-float-slow",
   },
   {
-    label: "Logic",
+    label: "Frontend",
     icon: Braces,
     className: "left-12 bottom-2 animate-float-delayed",
   },
 ];
-
-const buildIcons: LucideIcon[] = [Server, Workflow, Database, Sparkles];
 
 const particles = [
   { left: "8%", top: "10%", size: 3, duration: "11s", delay: "0s" },
@@ -239,7 +235,7 @@ export function PortfolioPage() {
                 <div>
                   <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/18 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-50 shadow-[0_14px_40px_rgba(56,189,248,0.14)]">
                     <Sparkles size={16} />
-                    Premium backend portfolio
+                    Software developer portfolio
                   </div>
 
                   <h1 className="mt-7 text-5xl font-semibold tracking-[-0.06em] text-white md:text-7xl">
@@ -253,24 +249,24 @@ export function PortfolioPage() {
                   </div>
 
                   <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
-                    Backend-focused engineer building scalable APIs, reliable
-                    data systems, and service workflows that power real
-                    products, not just polished interfaces.
+                    I like building products that are useful, fast, and easy to
+                    use, whether that means working on the frontend, the
+                    backend, or both.
                   </p>
 
                   <p className="mt-4 max-w-2xl text-base leading-8 text-slate-400">
-                    I design backend architecture for inventory analytics, legal
-                    research, and support tooling with a strong focus on clean
-                    data flow, maintainability, and recruiter-friendly clarity.
+                    Most of my projects sit somewhere between product, backend,
+                    and UI work. This portfolio is a mix of dashboards, APIs,
+                    support tools, legal tech, and a few smaller side projects.
                   </p>
 
                   <div className="mt-8 flex flex-wrap gap-3">
                     <ActionButton
-                      href="#featured-projects"
+                      href="#projects"
                       icon={ArrowUpRight}
                       variant="primary"
                     >
-                      Explore Featured Work
+                      View Projects
                     </ActionButton>
                     <ActionButton
                       href="https://github.com/ArpanNarula"
@@ -327,24 +323,24 @@ export function PortfolioPage() {
                         <div className="flex items-center justify-between">
                           <div>
                             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-100/90">
-                              Backend Snapshot
+                              Quick intro
                             </p>
                             <h2 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-white">
-                              APIs, services, and data flow
+                              A mix of product, UI, and backend work
                             </h2>
                           </div>
                           <div className="hidden rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-2 text-sm text-slate-200 md:block">
-                            Open to backend roles
+                            Open to software roles
                           </div>
                         </div>
 
                         <div className="mt-6 rounded-[28px] border border-white/10 bg-black/20 p-5 backdrop-blur-xl">
                           <div className="grid gap-3">
                             {[
-                              "Client Requests",
-                              "REST API Layer",
-                              "Business Logic",
-                              "Databases + AI Services",
+                              "Product ideas",
+                              "Frontend work",
+                              "Backend logic",
+                              "Deployment",
                             ].map((step, index) => (
                               <div key={step} className="flex items-center gap-3">
                                 <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-sm font-semibold text-cyan-100">
@@ -361,23 +357,23 @@ export function PortfolioPage() {
                         <div className="mt-6 grid gap-3 sm:grid-cols-2">
                           {[
                             {
-                              title: "API Design",
-                              text: "Clean route structures for real application workflows.",
+                              title: "Web apps",
+                              text: "I enjoy building products that feel clean and practical.",
                               icon: Server,
                             },
                             {
-                              title: "Data Systems",
-                              text: "Schemas shaped around query patterns and product needs.",
+                              title: "APIs",
+                              text: "A lot of my projects involve APIs, data flow, and integrations.",
                               icon: Database,
                             },
                             {
-                              title: "Integrations",
-                              text: "AI and external service orchestration with reliable flow.",
+                              title: "AI features",
+                              text: "I like using AI where it adds something useful to the product.",
                               icon: CircuitBoard,
                             },
                             {
-                              title: "Service Logic",
-                              text: "Backend-first thinking behind every dashboard and feature.",
+                              title: "Shipping",
+                              text: "I care about actually finishing projects and putting them live.",
                               icon: Workflow,
                             },
                           ].map((item) => {
@@ -434,14 +430,14 @@ export function PortfolioPage() {
           </section>
 
           <section
-            id="featured-projects"
+            id="projects"
             className="mx-auto mt-20 max-w-6xl scroll-mt-28"
           >
             <Reveal>
               <SectionHeading
-                eyebrow="Featured Projects"
-                title="Backend-heavy work gets the spotlight first"
-                description="These projects are intentionally larger, richer, and more detailed so recruiter attention lands on backend systems, APIs, and architecture before anything else."
+                eyebrow="Projects"
+                title="Some things I’ve built"
+                description="These are the main projects on the site. I’ve kept StockPilot, SupportOps, and CourtIQ first, and the smaller side projects at the end."
               />
             </Reveal>
 
@@ -459,58 +455,21 @@ export function PortfolioPage() {
                 </Reveal>
               ))}
             </div>
-          </section>
 
-          <section
-            id="what-i-build"
-            className="mx-auto mt-24 max-w-6xl scroll-mt-28"
-          >
-            <Reveal>
-              <SectionHeading
-                eyebrow="What I Build"
-                title="Systems that make the interface possible"
-                description="The goal is not just to show finished screens. It is to show the backend thinking underneath them: APIs, workflows, integrations, and data systems."
-              />
-            </Reveal>
-
-            <m.div
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.2 }}
-              className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4"
-            >
-              {whatIBuild.map((item, index) => {
-                const Icon = buildIcons[index];
-
-                return (
-                  <m.article
-                    key={item.title}
-                    variants={fadeItem}
-                    whileHover={{ y: -6 }}
-                    className="glass-surface rounded-[28px] p-6 shadow-[0_24px_80px_rgba(2,6,23,0.26)]"
-                  >
-                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-400/18 bg-cyan-400/10 text-cyan-100 shadow-[0_12px_30px_rgba(56,189,248,0.16)]">
-                      <Icon size={20} />
-                    </div>
-                    <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em] text-white">
-                      {item.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-7 text-slate-400">
-                      {item.description}
-                    </p>
-                  </m.article>
-                );
-              })}
-            </m.div>
+            <div className="mt-8 grid gap-5 lg:grid-cols-2">
+              {otherProjects.map((project, index) => (
+                <Reveal key={project.title} delay={0.08 * index}>
+                  <OtherProjectCard project={project} />
+                </Reveal>
+              ))}
+            </div>
           </section>
 
           <section id="skills" className="mx-auto mt-24 max-w-6xl scroll-mt-28">
             <Reveal>
               <SectionHeading
-                eyebrow="Backend Skills"
-                title="Visual, scannable, and still honest"
-                description="Grouped skill cards make backend strengths easy to scan quickly while keeping the page polished and recruiter-friendly."
+                eyebrow="Skills"
+                title="Tech I use"
               />
             </Reveal>
 
@@ -524,9 +483,8 @@ export function PortfolioPage() {
 
             <Reveal className="mt-6">
               <div className="glass-surface rounded-[26px] p-5 text-sm leading-7 text-slate-400">
-                I can still build the frontend layer when needed, but the core
-                positioning here is deliberate: backend systems, API design,
-                data flow, and application architecture come first.
+                I’m comfortable working across the stack, depending on what the
+                project needs.
               </div>
             </Reveal>
           </section>
@@ -538,8 +496,7 @@ export function PortfolioPage() {
             <Reveal>
               <SectionHeading
                 eyebrow="Experience"
-                title="Professional work framed like backend ownership"
-                description="The experience block now reads more like an engineering timeline entry than a generic internship line item."
+                title="Experience"
               />
             </Reveal>
 
@@ -557,7 +514,7 @@ export function PortfolioPage() {
                   <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
                     <div>
                       <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-100/80">
-                        Timeline Entry
+                        Internship
                       </p>
                       <h3 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-white">
                         {experience.title}
@@ -590,33 +547,11 @@ export function PortfolioPage() {
             </Reveal>
           </section>
 
-          <section
-            id="other-projects"
-            className="mx-auto mt-24 max-w-6xl scroll-mt-28"
-          >
-            <Reveal>
-              <SectionHeading
-                eyebrow="Other Projects"
-                title="Smaller cards, supporting range"
-                description="These projects stay visible, but with a lighter visual hierarchy so the portfolio still leads with backend-first work."
-              />
-            </Reveal>
-
-            <div className="mt-12 grid gap-5 lg:grid-cols-2">
-              {otherProjects.map((project, index) => (
-                <Reveal key={project.title} delay={0.08 * index}>
-                  <OtherProjectCard project={project} />
-                </Reveal>
-              ))}
-            </div>
-          </section>
-
           <section id="contact" className="mx-auto mt-24 max-w-6xl scroll-mt-28">
             <Reveal>
               <SectionHeading
                 eyebrow="Contact"
-                title="A premium finish, still easy to reach"
-                description="The contact area keeps the same simplicity as the rest of the portfolio: polished surfaces, clear actions, and no unnecessary clutter."
+                title="Get in touch"
               />
             </Reveal>
 
@@ -627,12 +562,11 @@ export function PortfolioPage() {
                     Let&apos;s connect
                   </p>
                   <h3 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white">
-                    Open to backend engineering opportunities
+                    Open to new opportunities
                   </h3>
                   <p className="mt-5 max-w-xl text-base leading-8 text-slate-400">
-                    Especially interested in roles focused on APIs, backend
-                    systems, support tooling, analytics workflows, and platform
-                    engineering foundations.
+                    If you think I’d be a good fit for your team or project,
+                    feel free to reach out.
                   </p>
 
                   <div className="mt-8 space-y-4">

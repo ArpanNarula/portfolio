@@ -56,16 +56,7 @@ export function FeaturedProjectCard({
 
         <div className="relative grid gap-8 lg:grid-cols-[1.18fr_0.82fr] lg:items-start">
           <div>
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="rounded-full border border-cyan-300/18 bg-cyan-300/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-cyan-100">
-                Featured Project
-              </span>
-              <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-slate-300">
-                Backend Focus
-              </span>
-            </div>
-
-            <p className="mt-5 text-sm font-medium uppercase tracking-[0.18em] text-slate-400">
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-slate-400">
               {project.label}
             </p>
             <h3 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-white">
@@ -92,7 +83,7 @@ export function FeaturedProjectCard({
 
             <div className="mt-7">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
-                Backend Contributions
+                What I Worked On
               </p>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-300">
                 {project.backendContributions.map((item) => (
@@ -153,14 +144,9 @@ export function FeaturedProjectCard({
           >
             <div className="pointer-events-none absolute -right-12 top-0 h-32 w-32 rounded-full bg-white/10 blur-3xl" />
             <div className="relative">
-              <div className="flex items-center justify-between">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-100/90">
-                  System Flow
-                </p>
-                <span className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-[11px] font-medium text-slate-200">
-                  Recruiter-ready
-                </span>
-              </div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-100/90">
+                Quick Look
+              </p>
 
               <div className="mt-5 space-y-3">
                 {project.architecture.map((node, index) => (

@@ -6,8 +6,8 @@ import type { LucideIcon } from "lucide-react";
 import type { SkillGroup } from "@/components/portfolio/data";
 
 const iconMap: Record<string, LucideIcon> = {
-  Backend: Server,
-  Database,
+  "Languages & Frameworks": Server,
+  "Data & Backend": Database,
   Tools: Wrench,
 };
 
