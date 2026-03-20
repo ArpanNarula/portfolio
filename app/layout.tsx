@@ -14,26 +14,30 @@ const geistMono = Geist_Mono({
 
 /* ✅ SEO + LinkedIn Preview Metadata */
 export const metadata: Metadata = {
-  title: "Arpan Narula | Full Stack Developer",
+  metadataBase: new URL("https://arpan-narula-portfolio.vercel.app"),
+  title: "Arpan Narula | Backend Developer",
   description:
-    "Portfolio of Arpan Narula — Full Stack Developer, NSUT student, SIH Semi-Finalist. Projects in GenAI, dashboards, and web applications.",
+    "Portfolio of Arpan Narula — Backend Developer focused on scalable APIs, backend systems, data modeling, and real-world application architecture.",
 
   keywords: [
     "Arpan Narula",
-    "Full Stack Developer",
+    "Backend Developer",
+    "Node.js Developer",
+    "REST API Developer",
+    "MongoDB Developer",
+    "System Design Portfolio",
     "Next.js Portfolio",
-    "React Developer",
     "NSUT",
     "Smart India Hackathon",
-    "GenAI Projects",
+    "Backend Systems",
   ],
 
   authors: [{ name: "Arpan Narula" }],
 
   openGraph: {
-    title: "Arpan Narula | Portfolio",
+    title: "Arpan Narula | Backend Developer Portfolio",
     description:
-      "Full Stack Developer | SIH Semi-Finalist | Projects in GenAI, AI dashboards & web development.",
+      "Backend Developer building scalable APIs, data systems, and backend logic for real-world applications.",
     url: "https://arpan-narula-portfolio.vercel.app", // change after final domain
     siteName: "Arpan Portfolio",
     images: [
@@ -50,9 +54,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Arpan Narula | Portfolio",
+    title: "Arpan Narula | Backend Developer Portfolio",
     description:
-      "Full Stack Developer | NSUT | SIH Semi-Finalist — Projects in GenAI and Web Development.",
+      "Backend Developer | APIs, data systems, application architecture, and AI-powered backend workflows.",
     images: ["/preview.png"],
   },
 

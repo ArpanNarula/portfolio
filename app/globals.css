@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #030712;
+  --foreground: #f8fafc;
 }
 
 @theme inline {
@@ -12,15 +12,180 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  background-image:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.1), transparent 34%),
+    radial-gradient(circle at 82% 14%, rgba(99, 102, 241, 0.1), transparent 26%),
+    linear-gradient(180deg, #030712 0%, #06101f 48%, #07111e 100%);
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.28);
+  color: #f8fafc;
+}
+
+a,
+button,
+input,
+textarea {
+  transition:
+    transform 180ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease,
+    color 220ms ease,
+    opacity 220ms ease;
+}
+
+.app-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.04), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 22%);
+  opacity: 0.7;
+}
+
+.hero-grid-mask {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 110px 110px;
+  mask-image: radial-gradient(circle at center, black 24%, transparent 82%);
+}
+
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.3'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+}
+
+.glass-surface {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.74), rgba(15, 23, 42, 0.52)),
+    rgba(15, 23, 42, 0.38);
+  backdrop-filter: blur(24px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 24px 70px rgba(2, 6, 23, 0.3);
+}
+
+.text-glow {
+  text-shadow:
+    0 0 20px rgba(191, 219, 254, 0.14),
+    0 0 48px rgba(99, 102, 241, 0.18);
+}
+
+.input-surface {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  outline: none;
+}
+
+.input-surface:focus {
+  border-color: rgba(125, 211, 252, 0.45);
+  box-shadow:
+    0 0 0 4px rgba(14, 165, 233, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.particle-dot {
+  animation-name: particle-float;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 7.5s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-slow 8.4s ease-in-out infinite 1.4s;
+}
+
+.animate-drift-slow {
+  animation: drift-slow 22s ease-in-out infinite alternate;
+}
+
+.animate-drift-delayed {
+  animation: drift-slow 28s ease-in-out infinite alternate-reverse;
+}
+
+.animate-light-sweep {
+  animation: light-sweep 18s ease-in-out infinite alternate;
+}
+
+.animate-caret {
+  animation: caret-blink 1s step-end infinite;
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes drift-slow {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(24px, -18px, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(-14px, 16px, 0) scale(0.98);
+  }
+}
+
+@keyframes light-sweep {
+  0% {
+    transform: translateX(-18%) translateY(0);
+    opacity: 0.36;
+  }
+  100% {
+    transform: translateX(18%) translateY(12px);
+    opacity: 0.16;
+  }
+}
+
+@keyframes caret-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes particle-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate3d(0, -14px, 0);
+    opacity: 0.75;
+  }
 }
