@@ -3,7 +3,6 @@
 import { LazyMotion, MotionConfig, domAnimation, m } from "framer-motion";
 import {
   ArrowUpRight,
-  Braces,
   CircuitBoard,
   Database,
   FileDown,
@@ -11,9 +10,7 @@ import {
   Linkedin,
   Mail,
   Menu,
-  Network,
   Server,
-  Sparkles,
   Workflow,
   X,
 } from "lucide-react";
@@ -49,29 +46,6 @@ const fadeItem = {
   hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0 },
 };
-
-const heroFloatingIcons = [
-  {
-    label: "Node.js",
-    icon: Server,
-    className: "left-[-10px] top-14 animate-float-slow",
-  },
-  {
-    label: "MongoDB",
-    icon: Database,
-    className: "right-[-8px] top-8 animate-float-delayed",
-  },
-  {
-    label: "APIs",
-    icon: Network,
-    className: "right-10 bottom-8 animate-float-slow",
-  },
-  {
-    label: "Frontend",
-    icon: Braces,
-    className: "left-12 bottom-2 animate-float-delayed",
-  },
-];
 
 const particles = [
   { left: "8%", top: "10%", size: 3, duration: "11s", delay: "0s" },
@@ -135,7 +109,7 @@ export function PortfolioPage() {
               href="#top"
               className="text-sm font-semibold uppercase tracking-[0.28em] text-white"
             >
-              arpan.dev
+              Portfolio
             </a>
 
             <div className="hidden items-center gap-6 text-sm font-medium text-slate-300 md:flex">
@@ -233,12 +207,7 @@ export function PortfolioPage() {
             <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
               <Reveal>
                 <div>
-                  <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/18 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-50 shadow-[0_14px_40px_rgba(56,189,248,0.14)]">
-                    <Sparkles size={16} />
-                    Software developer portfolio
-                  </div>
-
-                  <h1 className="mt-7 text-5xl font-semibold tracking-[-0.06em] text-white md:text-7xl">
+                  <h1 className="text-5xl font-semibold tracking-[-0.06em] text-white md:text-7xl">
                     <span className="text-glow bg-[linear-gradient(135deg,#ffffff_20%,#dbeafe_45%,#c4b5fd_80%)] bg-clip-text text-transparent">
                       Arpan Narula
                     </span>
@@ -300,21 +269,6 @@ export function PortfolioPage() {
 
               <Reveal delay={0.1}>
                 <div className="relative">
-                  {heroFloatingIcons.map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <div
-                        key={item.label}
-                        className={`absolute hidden rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-slate-200 shadow-[0_12px_40px_rgba(2,6,23,0.36)] backdrop-blur-2xl lg:flex ${item.className}`}
-                      >
-                        <span className="flex items-center gap-2">
-                          <Icon size={15} className="text-cyan-200" />
-                          {item.label}
-                        </span>
-                      </div>
-                    );
-                  })}
-
                   <div className="relative overflow-hidden rounded-[34px] p-px shadow-[0_30px_100px_rgba(37,99,235,0.14)]">
                     <div className="absolute inset-0 rounded-[34px] bg-[linear-gradient(135deg,rgba(59,130,246,0.64),rgba(99,102,241,0.24),rgba(168,85,247,0.42))]" />
                     <div className="glass-surface relative rounded-[33px] p-6 md:p-7">
