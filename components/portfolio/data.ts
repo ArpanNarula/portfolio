@@ -11,12 +11,17 @@ export type FeaturedProject = {
   description: string;
   liveUrl: string;
   githubUrl: string;
+  extraLinks?: Array<{
+    label: string;
+    url: string;
+  }>;
   backendContributions: string[];
   keyFeatures: string[];
   techStack: string[];
   focusAreas: string[];
   architecture: string[];
   accent: AccentSet;
+  note?: string;
   featured?: boolean;
 };
 
@@ -59,7 +64,7 @@ export const heroHighlights = [
 export const proofPoints = [
   {
     title: "Projects",
-    value: "5 projects on the site",
+    value: "6 projects on the site",
   },
   {
     title: "Work I enjoy",
@@ -156,6 +161,61 @@ export const featuredProjects: FeaturedProject[] = [
       pill: "rgba(56, 189, 248, 0.12)",
     },
     featured: true,
+  },
+  {
+    title: "EvalForge AI",
+    label: "LLM Evaluation & Feedback Engine",
+    description:
+      "EvalForge AI is a full-stack app that simulates how AI systems improve response quality using evaluation pipelines, ranking, retrieval, and feedback loops.",
+    liveUrl: "https://evalforge-ai-frontend.vercel.app/",
+    githubUrl: "https://github.com/ArpanNarula/EvalForge-AI-",
+    extraLinks: [
+      {
+        label: "Backend API",
+        url: "https://evalforge-ai-api.vercel.app",
+      },
+    ],
+    backendContributions: [
+      "Built a multi-stage pipeline that generates multiple responses, evaluates them, ranks them, and selects the best output.",
+      "Added scoring using rule-based logic, simulated embedding similarity, and simulated judge-style evaluation.",
+      "Implemented feedback handling so thumbs up and thumbs down can influence ranking weights over time.",
+      "Created retrieval logic to store stronger responses and reuse them for future prompts.",
+      "Split the app into a Next.js frontend and FastAPI backend with a clean full-stack flow.",
+    ],
+    keyFeatures: [
+      "Multi-response generation",
+      "Evaluation and score breakdowns",
+      "Ranking and best-response selection",
+      "Feedback and retrieval loop",
+    ],
+    techStack: [
+      "Next.js",
+      "React",
+      "FastAPI",
+      "Python",
+      "Recharts",
+      "Vercel",
+      "Pytest",
+    ],
+    focusAreas: ["Evaluation", "Ranking", "Feedback"],
+    architecture: [
+      "Prompt",
+      "Generate",
+      "Evaluate",
+      "Rank",
+      "Feedback",
+      "Improve",
+    ],
+    note:
+      "Prototype system: generation and evaluation are simulated to show the architecture and workflow clearly.",
+    accent: {
+      border:
+        "linear-gradient(135deg, rgba(59,130,246,0.58), rgba(167,139,250,0.36), rgba(45,212,191,0.38))",
+      preview:
+        "radial-gradient(circle at top left, rgba(96,165,250,0.32), transparent 40%), linear-gradient(140deg, rgba(7,12,30,0.98), rgba(18,18,44,0.9))",
+      glow: "rgba(96, 165, 250, 0.22)",
+      pill: "rgba(96, 165, 250, 0.12)",
+    },
   },
   {
     title: "SupportOps Assistant",

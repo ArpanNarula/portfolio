@@ -7,6 +7,7 @@ It highlights the projects I’ve worked on, the stack I use, a short experience
 ## Projects on the site
 
 - StockPilot AI
+- EvalForge AI
 - SupportOps Assistant
 - CourtIQ
 - Finio

@@ -124,6 +124,23 @@ export function FeaturedProjectCard({
                 <Github size={16} />
                 GitHub
               </m.a>
+              {project.extraLinks?.map((link) => (
+                <m.a
+                  key={link.url}
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.985 }}
+                  href={link.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group inline-flex items-center gap-2 rounded-2xl border border-white/12 bg-white/[0.05] px-4 py-3 text-sm font-semibold text-slate-100 shadow-[0_16px_36px_rgba(15,23,42,0.22)]"
+                >
+                  <ArrowUpRight
+                    size={16}
+                    className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  />
+                  {link.label}
+                </m.a>
+              ))}
               <m.a
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.985 }}
@@ -171,6 +188,15 @@ export function FeaturedProjectCard({
                   </div>
                 ))}
               </div>
+
+              {project.note ? (
+                <div className="mt-6 rounded-2xl border border-cyan-200/10 bg-black/20 px-4 py-4 text-sm leading-6 text-slate-300 backdrop-blur-sm">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-cyan-100/80">
+                    Current Build
+                  </p>
+                  <p className="mt-2">{project.note}</p>
+                </div>
+              ) : null}
             </div>
           </div>
         </div>
