@@ -92,6 +92,8 @@ function BackgroundEffects() {
 
 export function PortfolioPage() {
   const [open, setOpen] = useState(false);
+  const promotedProject = otherProjects[0];
+  const trailingProjects = otherProjects.slice(1);
 
   return (
     <LazyMotion features={domAnimation}>
@@ -204,7 +206,7 @@ export function PortfolioPage() {
             id="top"
             className="mx-auto max-w-6xl pb-8 pt-28 sm:pt-32 lg:pt-36"
           >
-            <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+            <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
               <Reveal>
                 <div>
                   <h1 className="text-5xl font-semibold tracking-[-0.06em] text-white md:text-7xl">
@@ -391,7 +393,7 @@ export function PortfolioPage() {
               <SectionHeading
                 eyebrow="Projects"
                 title="Some things I’ve built"
-                description="These are the main projects on the site. I’ve kept StockPilot, SupportOps, and CourtIQ first, and the smaller side projects at the end."
+                description="These are the projects I wanted to highlight first, with the smaller side work kept simple below."
               />
             </Reveal>
 
@@ -408,15 +410,29 @@ export function PortfolioPage() {
                   />
                 </Reveal>
               ))}
+
+              {promotedProject ? (
+                <Reveal key={promotedProject.title} delay={0.08 * featuredProjects.length}>
+                  <OtherProjectCard project={promotedProject} />
+                </Reveal>
+              ) : null}
             </div>
 
-            <div className="mt-8 grid gap-5 lg:grid-cols-2">
-              {otherProjects.map((project, index) => (
-                <Reveal key={project.title} delay={0.08 * index}>
-                  <OtherProjectCard project={project} />
-                </Reveal>
-              ))}
-            </div>
+            {trailingProjects.length > 0 ? (
+              <div
+                className={`mt-8 grid gap-5 ${
+                  trailingProjects.length === 1
+                    ? "mx-auto max-w-2xl"
+                    : "lg:grid-cols-2"
+                }`}
+              >
+                {trailingProjects.map((project, index) => (
+                  <Reveal key={project.title} delay={0.08 * index}>
+                    <OtherProjectCard project={project} />
+                  </Reveal>
+                ))}
+              </div>
+            ) : null}
           </section>
 
           <section id="skills" className="mx-auto mt-24 max-w-6xl scroll-mt-28">
