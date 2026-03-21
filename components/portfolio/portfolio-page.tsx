@@ -92,8 +92,9 @@ function BackgroundEffects() {
 
 export function PortfolioPage() {
   const [open, setOpen] = useState(false);
-  const promotedProject = otherProjects[0];
-  const trailingProjects = otherProjects.slice(1);
+  const mainFeaturedProjects = featuredProjects.slice(0, -1);
+  const closingFeaturedProject = featuredProjects[featuredProjects.length - 1];
+  const stackedProjects = otherProjects;
 
   return (
     <LazyMotion features={domAnimation}>
@@ -398,7 +399,7 @@ export function PortfolioPage() {
             </Reveal>
 
             <div className="mt-12 grid gap-6 lg:grid-cols-2">
-              {featuredProjects.map((project, index) => (
+              {mainFeaturedProjects.map((project, index) => (
                 <Reveal
                   key={project.title}
                   delay={0.08 * index}
@@ -410,27 +411,26 @@ export function PortfolioPage() {
                   />
                 </Reveal>
               ))}
-
-              {promotedProject ? (
-                <Reveal key={promotedProject.title} delay={0.08 * featuredProjects.length}>
-                  <OtherProjectCard project={promotedProject} />
-                </Reveal>
-              ) : null}
             </div>
 
-            {trailingProjects.length > 0 ? (
-              <div
-                className={`mt-8 grid gap-5 ${
-                  trailingProjects.length === 1
-                    ? "mx-auto max-w-2xl"
-                    : "lg:grid-cols-2"
-                }`}
-              >
-                {trailingProjects.map((project, index) => (
-                  <Reveal key={project.title} delay={0.08 * index}>
-                    <OtherProjectCard project={project} />
-                  </Reveal>
-                ))}
+            {closingFeaturedProject ? (
+              <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.88fr)] lg:items-start">
+                <Reveal delay={0.08 * mainFeaturedProjects.length}>
+                  <FeaturedProjectCard project={closingFeaturedProject} />
+                </Reveal>
+
+                {stackedProjects.length > 0 ? (
+                  <div className="grid gap-5 self-start">
+                    {stackedProjects.map((project, index) => (
+                      <Reveal
+                        key={project.title}
+                        delay={0.08 * (mainFeaturedProjects.length + index + 1)}
+                      >
+                        <OtherProjectCard project={project} />
+                      </Reveal>
+                    ))}
+                  </div>
+                ) : null}
               </div>
             ) : null}
           </section>
