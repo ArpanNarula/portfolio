@@ -289,8 +289,8 @@ export function PortfolioPage() {
                     <div className="glass-surface relative rounded-[33px] p-6 md:p-7">
                       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.22),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.18),transparent_42%)]" />
                       <div className="relative">
-                        <div className="flex items-center justify-between">
-                          <div>
+                        <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start">
+                          <div className="max-w-[26rem]">
                             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-100/90">
                               Quick intro
                             </p>
@@ -298,7 +298,7 @@ export function PortfolioPage() {
                               Product thinking, interface detail, and backend work
                             </h2>
                           </div>
-                          <div className="hidden rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-2 text-sm text-slate-200 md:block">
+                          <div className="hidden rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-2 text-sm text-slate-200 md:block lg:justify-self-end">
                             Open to software roles
                           </div>
                         </div>

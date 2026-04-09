@@ -265,9 +265,9 @@ export function usePremiumScroll(rootRef: RefObject<HTMLElement | null>) {
             showcaseCards.forEach((card, index) => {
               gsap.set(card, {
                 zIndex: showcaseCards.length - index,
-                autoAlpha: index === 0 ? 1 : 0.38,
-                y: index * 24,
-                scale: 1 - index * 0.05,
+                autoAlpha: index === 0 ? 1 : 0,
+                y: index === 0 ? 0 : 52,
+                scale: index === 0 ? 1 : 0.96,
               });
             });
 
@@ -285,9 +285,9 @@ export function usePremiumScroll(rootRef: RefObject<HTMLElement | null>) {
                 .to(
                   previous,
                   {
-                    autoAlpha: 0.16,
-                    y: -28,
-                    scale: 0.92,
+                    autoAlpha: 0,
+                    y: -40,
+                    scale: 0.94,
                   },
                   index,
                 )
