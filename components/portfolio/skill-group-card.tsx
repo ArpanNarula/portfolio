@@ -20,6 +20,7 @@ export function SkillGroupCard({ group }: SkillGroupCardProps) {
 
   return (
     <m.article
+      data-skill-card
       whileHover={{ y: -6 }}
       transition={{ duration: 0.22 }}
       className="group rounded-[28px] border border-white/10 bg-white/[0.03] p-6 shadow-[0_24px_70px_rgba(2,6,23,0.3)] backdrop-blur-xl"

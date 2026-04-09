@@ -14,6 +14,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 120px;
 }
 
 body {
@@ -21,10 +22,12 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   background-image:
-    radial-gradient(circle at top left, rgba(56, 189, 248, 0.1), transparent 34%),
-    radial-gradient(circle at 82% 14%, rgba(99, 102, 241, 0.1), transparent 26%),
-    linear-gradient(180deg, #030712 0%, #06101f 48%, #07111e 100%);
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 32%),
+    radial-gradient(circle at 82% 14%, rgba(99, 102, 241, 0.12), transparent 24%),
+    radial-gradient(circle at 50% 60%, rgba(15, 23, 42, 0.45), transparent 40%),
+    linear-gradient(180deg, #02050b 0%, #06101f 48%, #07111e 100%);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 * {
@@ -60,6 +63,10 @@ textarea {
   opacity: 0.7;
 }
 
+.app-shell {
+  isolation: isolate;
+}
+
 .hero-grid-mask {
   background-image:
     linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
@@ -88,6 +95,63 @@ textarea {
   text-shadow:
     0 0 20px rgba(191, 219, 254, 0.14),
     0 0 48px rgba(99, 102, 241, 0.18);
+}
+
+.reveal-shell {
+  will-change: transform, opacity;
+}
+
+.nav-scrolled {
+  background: rgba(2, 6, 23, 0.82);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 20px 90px rgba(2, 6, 23, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(28px);
+}
+
+.hero-panel {
+  will-change: transform, opacity;
+}
+
+.project-tilt-card {
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition:
+    box-shadow 280ms ease,
+    border-color 280ms ease,
+    background-color 280ms ease;
+}
+
+.project-tilt-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top center, rgba(255, 255, 255, 0.08), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 50%);
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+
+.group:hover .project-tilt-card::after {
+  opacity: 1;
+}
+
+.project-tilt-card [data-project-preview],
+.project-tilt-card [data-card-glow] {
+  transform: translateZ(22px);
+}
+
+.showcase-card {
+  backdrop-filter: blur(24px);
+  will-change: transform, opacity;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 36px 120px rgba(2, 6, 23, 0.36);
 }
 
 .input-surface {
@@ -187,5 +251,29 @@ textarea {
   50% {
     transform: translate3d(0, -14px, 0);
     opacity: 0.75;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .particle-dot,
+  .animate-float-slow,
+  .animate-float-delayed,
+  .animate-drift-slow,
+  .animate-drift-delayed,
+  .animate-light-sweep,
+  .animate-caret {
+    animation: none !important;
+  }
+
+  .reveal-shell,
+  .project-tilt-card,
+  .hero-panel,
+  .showcase-card {
+    transition: none !important;
+    will-change: auto;
   }
 }

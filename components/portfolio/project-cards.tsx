@@ -38,16 +38,19 @@ export function FeaturedProjectCard({
 }: FeaturedProjectCardProps) {
   return (
     <m.article
+      data-project-card
       whileHover={{ y: -8, scale: 1.008 }}
       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
       className={`group relative overflow-hidden rounded-[30px] p-px ${className}`}
       style={{ background: project.accent.border }}
     >
       <div
-        className="glass-surface relative h-full overflow-hidden rounded-[29px] p-7 md:p-8"
+        data-tilt-card
+        className="glass-surface project-tilt-card relative h-full overflow-hidden rounded-[29px] p-7 md:p-8"
         style={{ boxShadow: `0 30px 90px ${project.accent.glow}` }}
       >
         <div
+          data-card-glow
           className="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100"
           style={{
             background: `radial-gradient(circle at top right, ${project.accent.glow}, transparent 46%)`,
@@ -156,6 +159,7 @@ export function FeaturedProjectCard({
           </div>
 
           <div
+            data-project-preview
             className="relative overflow-hidden rounded-[26px] border border-white/10 p-5"
             style={{ background: project.accent.preview }}
           >
@@ -208,16 +212,19 @@ export function FeaturedProjectCard({
 export function OtherProjectCard({ project }: OtherProjectCardProps) {
   return (
     <m.article
+      data-project-card
       whileHover={{ y: -6, scale: 1.012 }}
       transition={{ duration: 0.22 }}
       className="group relative overflow-hidden rounded-[26px] p-px"
       style={{ background: project.accent.border }}
     >
       <div
-        className="glass-surface relative overflow-hidden rounded-[25px] p-6"
+        data-tilt-card
+        className="glass-surface project-tilt-card relative overflow-hidden rounded-[25px] p-6"
         style={{ boxShadow: `0 24px 70px ${project.accent.glow}` }}
       >
         <div
+          data-card-glow
           className="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100"
           style={{
             background: `radial-gradient(circle at top right, ${project.accent.glow}, transparent 45%)`,
@@ -225,6 +232,7 @@ export function OtherProjectCard({ project }: OtherProjectCardProps) {
         />
 
         <div
+          data-project-preview
           className="relative rounded-[20px] border border-white/10 p-4"
           style={{ background: project.accent.preview }}
         >

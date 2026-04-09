@@ -28,15 +28,13 @@ type ActionButtonProps = {
 
 export function Reveal({ children, className = "", delay = 0 }: RevealProps) {
   return (
-    <m.div
-      initial={{ opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] }}
-      className={className}
+    <div
+      data-reveal
+      data-delay={delay}
+      className={`reveal-shell ${className}`}
     >
       {children}
-    </m.div>
+    </div>
   );
 }
 
@@ -50,15 +48,29 @@ export function SectionHeading({
   const wrapperWidth = align === "left" ? "max-w-3xl" : "mx-auto max-w-3xl";
 
   return (
-    <div className={`${wrapperWidth} ${alignment}`}>
-      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200/80">
+    <div
+      data-section-heading
+      className={`${wrapperWidth} ${alignment}`}
+    >
+      <p
+        data-section-eyebrow
+        className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200/80"
+      >
         {eyebrow}
       </p>
-      <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-5xl">
+      <h2
+        data-section-title
+        className="mt-4 text-3xl font-semibold tracking-[-0.05em] text-white md:text-5xl"
+      >
         {title}
       </h2>
       {description ? (
-        <p className="mt-5 text-base leading-8 text-slate-400">{description}</p>
+        <p
+          data-section-description
+          className="mt-5 text-base leading-8 text-slate-400"
+        >
+          {description}
+        </p>
       ) : null}
     </div>
   );

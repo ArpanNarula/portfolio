@@ -14,7 +14,7 @@ import {
   Workflow,
   X,
 } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   experience,
   featuredProjects,
@@ -29,23 +29,11 @@ import {
   FeaturedProjectCard,
   OtherProjectCard,
 } from "@/components/portfolio/project-cards";
+import { ShowcaseSection } from "@/components/portfolio/showcase-section";
 import { SkillGroupCard } from "@/components/portfolio/skill-group-card";
 import { TypewriterRoles } from "@/components/portfolio/typewriter-roles";
+import { usePremiumScroll } from "@/components/portfolio/use-premium-scroll";
 import { ActionButton, Reveal, SectionHeading } from "@/components/portfolio/ui";
-
-const staggerContainer = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const fadeItem = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0 },
-};
 
 const particles = [
   { left: "8%", top: "10%", size: 3, duration: "11s", delay: "0s" },
@@ -63,14 +51,32 @@ const particles = [
 function BackgroundEffects() {
   return (
     <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-      <div className="hero-grid-mask absolute inset-0 opacity-60" />
+      <div
+        data-parallax="8"
+        className="hero-grid-mask absolute inset-0 opacity-60"
+      />
       <div className="noise-overlay absolute inset-0 opacity-40" />
 
-      <div className="absolute inset-x-0 top-[-8rem] h-[26rem] bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.26),transparent_55%)] blur-3xl" />
-      <div className="animate-drift-slow absolute left-[-10%] top-[8%] h-[28rem] w-[28rem] rounded-full bg-cyan-500/18 blur-[120px]" />
-      <div className="animate-drift-delayed absolute right-[-8%] top-[16%] h-[24rem] w-[24rem] rounded-full bg-violet-500/14 blur-[120px]" />
-      <div className="animate-drift-slow absolute bottom-[-8rem] left-[36%] h-[24rem] w-[24rem] rounded-full bg-blue-500/14 blur-[140px]" />
-      <div className="animate-light-sweep absolute left-1/2 top-[12%] h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.08),transparent_58%)] blur-[120px]" />
+      <div
+        data-parallax="12"
+        className="absolute inset-x-0 top-[-8rem] h-[26rem] bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.26),transparent_55%)] blur-3xl"
+      />
+      <div
+        data-parallax="18"
+        className="animate-drift-slow absolute left-[-10%] top-[8%] h-[28rem] w-[28rem] rounded-full bg-cyan-500/18 blur-[120px]"
+      />
+      <div
+        data-parallax="24"
+        className="animate-drift-delayed absolute right-[-8%] top-[16%] h-[24rem] w-[24rem] rounded-full bg-violet-500/14 blur-[120px]"
+      />
+      <div
+        data-parallax="16"
+        className="animate-drift-slow absolute bottom-[-8rem] left-[36%] h-[24rem] w-[24rem] rounded-full bg-blue-500/14 blur-[140px]"
+      />
+      <div
+        data-parallax="10"
+        className="animate-light-sweep absolute left-1/2 top-[12%] h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.08),transparent_58%)] blur-[120px]"
+      />
 
       {particles.map((particle) => (
         <span
@@ -92,21 +98,27 @@ function BackgroundEffects() {
 
 export function PortfolioPage() {
   const [open, setOpen] = useState(false);
+  const mainRef = useRef<HTMLElement | null>(null);
   const mainFeaturedProjects = featuredProjects.slice(0, -1);
   const closingFeaturedProject = featuredProjects[featuredProjects.length - 1];
   const stackedProjects = otherProjects;
+  usePremiumScroll(mainRef);
 
   return (
     <LazyMotion features={domAnimation}>
       <MotionConfig reducedMotion="user">
-        <main className="app-shell relative min-h-screen overflow-x-hidden px-6 pb-24 pt-6 text-white sm:px-8">
+        <main
+          ref={mainRef}
+          className="app-shell relative min-h-screen overflow-x-hidden px-6 pb-28 pt-6 text-white sm:px-8"
+        >
           <BackgroundEffects />
 
           <m.nav
             initial={{ y: -24, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-x-0 top-4 z-30 mx-auto flex w-[min(1160px,calc(100%-1.5rem))] items-center justify-between rounded-[24px] border border-white/12 bg-slate-950/70 px-4 py-3 shadow-[0_18px_80px_rgba(2,6,23,0.32)] backdrop-blur-2xl"
+            data-nav
+            className="fixed inset-x-0 top-4 z-30 mx-auto flex w-[min(1160px,calc(100%-1.5rem))] items-center justify-between rounded-[24px] border border-white/10 bg-slate-950/54 px-4 py-3 shadow-[0_18px_80px_rgba(2,6,23,0.24)] backdrop-blur-xl"
           >
             <a
               href="#top"
@@ -205,12 +217,13 @@ export function PortfolioPage() {
 
           <section
             id="top"
-            className="mx-auto max-w-6xl pb-8 pt-28 sm:pt-32 lg:pt-36"
+            data-hero-section
+            className="mx-auto max-w-6xl pb-10 pt-[7.5rem] sm:pt-36 lg:pt-40"
           >
-            <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
-              <Reveal>
+            <div className="grid gap-14 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
+              <div data-hero-copy className="max-w-[40rem]">
                 <div>
-                  <h1 className="text-5xl font-semibold tracking-[-0.06em] text-white md:text-7xl">
+                  <h1 className="text-5xl font-semibold tracking-[-0.07em] text-white md:text-7xl lg:text-[6.4rem]">
                     <span className="text-glow bg-[linear-gradient(135deg,#ffffff_20%,#dbeafe_45%,#c4b5fd_80%)] bg-clip-text text-transparent">
                       Arpan Narula
                     </span>
@@ -221,18 +234,17 @@ export function PortfolioPage() {
                   </div>
 
                   <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
-                    I like building products that are useful, fast, and easy to
-                    use, whether that means working on the frontend, the
-                    backend, or both.
+                    I build products that feel useful, fast, and easy to use,
+                    whether the work leans frontend, backend, or both.
                   </p>
 
                   <p className="mt-4 max-w-2xl text-base leading-8 text-slate-400">
-                    Most of my projects sit somewhere between product, backend,
-                    and UI work. This portfolio is a mix of dashboards, APIs,
-                    support tools, legal tech, and a few smaller side projects.
+                    Most of my work sits between product, backend, and UI. This
+                    portfolio brings together dashboards, APIs, support tools,
+                    legal tech, and a few smaller experiments.
                   </p>
 
-                  <div className="mt-8 flex flex-wrap gap-3">
+                  <div className="mt-9 flex flex-wrap gap-3">
                     <ActionButton
                       href="#projects"
                       icon={ArrowUpRight}
@@ -257,20 +269,20 @@ export function PortfolioPage() {
                     </ActionButton>
                   </div>
 
-                  <div className="mt-8 flex flex-wrap gap-3">
+                  <div className="mt-9 flex flex-wrap gap-3">
                     {heroHighlights.map((item) => (
                       <span
                         key={item}
-                        className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-slate-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]"
+                        className="rounded-full border border-white/10 bg-white/[0.045] px-4 py-2 text-sm font-medium text-slate-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]"
                       >
                         {item}
                       </span>
                     ))}
                   </div>
                 </div>
-              </Reveal>
+              </div>
 
-              <Reveal delay={0.1}>
+              <div data-hero-panel className="hero-panel relative">
                 <div className="relative">
                   <div className="relative overflow-hidden rounded-[34px] p-px shadow-[0_30px_100px_rgba(37,99,235,0.14)]">
                     <div className="absolute inset-0 rounded-[34px] bg-[linear-gradient(135deg,rgba(59,130,246,0.64),rgba(99,102,241,0.24),rgba(168,85,247,0.42))]" />
@@ -283,7 +295,7 @@ export function PortfolioPage() {
                               Quick intro
                             </p>
                             <h2 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-white">
-                              A mix of product, UI, and backend work
+                              Product thinking, interface detail, and backend work
                             </h2>
                           </div>
                           <div className="hidden rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-2 text-sm text-slate-200 md:block">
@@ -315,22 +327,22 @@ export function PortfolioPage() {
                           {[
                             {
                               title: "Web apps",
-                              text: "I enjoy building products that feel clean and practical.",
+                              text: "I like building products that feel clear and practical.",
                               icon: Server,
                             },
                             {
                               title: "APIs",
-                              text: "A lot of my projects involve APIs, data flow, and integrations.",
+                              text: "A lot of my work involves APIs, data flow, and integrations.",
                               icon: Database,
                             },
                             {
                               title: "AI features",
-                              text: "I like using AI where it adds something useful to the product.",
+                              text: "I use AI when it adds something real to the product.",
                               icon: CircuitBoard,
                             },
                             {
                               title: "Shipping",
-                              text: "I care about actually finishing projects and putting them live.",
+                              text: "I care about finishing projects and getting them live.",
                               icon: Workflow,
                             },
                           ].map((item) => {
@@ -357,44 +369,25 @@ export function PortfolioPage() {
                     </div>
                   </div>
                 </div>
-              </Reveal>
+              </div>
             </div>
 
-            <Reveal className="mt-10">
-              <m.div
-                variants={staggerContainer}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, amount: 0.2 }}
-                className="grid gap-4 md:grid-cols-3"
-              >
-                {proofPoints.map((point) => (
-                  <m.div
-                    key={point.title}
-                    variants={fadeItem}
-                    className="rounded-[26px] border border-white/10 bg-white/[0.04] p-5 shadow-[0_20px_70px_rgba(2,6,23,0.28)] backdrop-blur-2xl"
-                  >
-                    <p className="text-sm font-medium text-slate-400">
-                      {point.title}
-                    </p>
-                    <p className="mt-3 text-lg font-semibold tracking-[-0.03em] text-white">
-                      {point.value}
-                    </p>
-                  </m.div>
-                ))}
-              </m.div>
-            </Reveal>
+            <ShowcaseSection
+              points={proofPoints}
+              highlights={heroHighlights}
+            />
           </section>
 
           <section
             id="projects"
-            className="mx-auto mt-20 max-w-6xl scroll-mt-28"
+            className="mx-auto mt-28 max-w-6xl scroll-mt-28"
           >
             <Reveal>
               <SectionHeading
                 eyebrow="Projects"
                 title="Some things I’ve built"
-                description="These are the projects I wanted to highlight first, with the smaller side work kept simple below."
+                description="A selection of product, backend, and interface work."
+                align="left"
               />
             </Reveal>
 
@@ -435,11 +428,12 @@ export function PortfolioPage() {
             ) : null}
           </section>
 
-          <section id="skills" className="mx-auto mt-24 max-w-6xl scroll-mt-28">
+          <section id="skills" className="mx-auto mt-28 max-w-6xl scroll-mt-28">
             <Reveal>
               <SectionHeading
                 eyebrow="Skills"
                 title="Tech I use"
+                align="left"
               />
             </Reveal>
 
@@ -454,19 +448,20 @@ export function PortfolioPage() {
             <Reveal className="mt-6">
               <div className="glass-surface rounded-[26px] p-5 text-sm leading-7 text-slate-400">
                 I’m comfortable working across the stack, depending on what the
-                project needs.
+                product needs.
               </div>
             </Reveal>
           </section>
 
           <section
             id="experience"
-            className="mx-auto mt-24 max-w-5xl scroll-mt-28"
+            className="mx-auto mt-28 max-w-5xl scroll-mt-28"
           >
             <Reveal>
               <SectionHeading
                 eyebrow="Experience"
                 title="Experience"
+                align="left"
               />
             </Reveal>
 
@@ -479,6 +474,7 @@ export function PortfolioPage() {
 
                 <m.article
                   whileHover={{ x: 4, y: -3 }}
+                  data-contact-card
                   className="glass-surface rounded-[30px] border-l border-l-cyan-300/30 p-7 shadow-[0_24px_80px_rgba(2,6,23,0.3)]"
                 >
                   <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
@@ -517,17 +513,21 @@ export function PortfolioPage() {
             </Reveal>
           </section>
 
-          <section id="contact" className="mx-auto mt-24 max-w-6xl scroll-mt-28">
+          <section id="contact" className="mx-auto mt-28 max-w-6xl scroll-mt-28">
             <Reveal>
               <SectionHeading
                 eyebrow="Contact"
                 title="Get in touch"
+                align="left"
               />
             </Reveal>
 
             <div className="mt-12 grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
               <Reveal>
-                <div className="glass-surface rounded-[32px] p-7 shadow-[0_24px_90px_rgba(2,6,23,0.3)]">
+                <div
+                  data-contact-card
+                  className="glass-surface rounded-[32px] p-7 shadow-[0_24px_90px_rgba(2,6,23,0.3)]"
+                >
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-100/80">
                     Let&apos;s connect
                   </p>
@@ -535,7 +535,7 @@ export function PortfolioPage() {
                     Open to new opportunities
                   </h3>
                   <p className="mt-5 max-w-xl text-base leading-8 text-slate-400">
-                    If you think I’d be a good fit for your team or project,
+                    If there’s a role, team, or product where I could help,
                     feel free to reach out.
                   </p>
 
@@ -571,6 +571,7 @@ export function PortfolioPage() {
 
               <Reveal delay={0.08}>
                 <form
+                  data-contact-card
                   action="https://formspree.io/f/mojnlnej"
                   method="POST"
                   className="glass-surface rounded-[32px] p-7 shadow-[0_24px_90px_rgba(2,6,23,0.3)]"

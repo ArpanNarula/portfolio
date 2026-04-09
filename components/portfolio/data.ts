@@ -64,15 +64,15 @@ export const heroHighlights = [
 export const proofPoints = [
   {
     title: "Projects",
-    value: "6 projects on the site",
+    value: "6 selected projects",
   },
   {
     title: "Work I enjoy",
-    value: "Web apps, APIs, dashboards, and useful tools",
+    value: "Web apps, APIs, dashboards, and product work",
   },
   {
     title: "Looking for",
-    value: "Software roles where I can keep building",
+    value: "Software roles with room to build and ship",
   },
 ];
 
@@ -120,22 +120,22 @@ export const featuredProjects: FeaturedProject[] = [
     title: "StockPilot AI",
     label: "Inventory Forecasting Platform",
     description:
-      "StockPilot AI helps businesses track inventory, spot deadstock, and make better restocking decisions using analytics and forecasting.",
+      "StockPilot AI helps teams track inventory, spot deadstock, and make sharper restocking decisions.",
     liveUrl:
       "https://stockpilot-ai-4ytqeyja8gw56sbxrwko4y.streamlit.app",
     githubUrl: "https://github.com/ArpanNarula/StockPilot-AI",
     backendContributions: [
-      "Built APIs with Node.js and Express.js for inventory tracking, analytics, and forecasting flows.",
-      "Designed MongoDB models for users, products, SKU-level stock data, and forecast results.",
-      "Added processing pipelines for deadstock detection and restock recommendations.",
-      "Integrated Gemini to generate product insights and summaries inside the app.",
-      "Connected backend services with dashboards for real-time business visibility.",
+      "Built Node.js and Express APIs for inventory, analytics, and forecasting flows.",
+      "Designed MongoDB models for users, products, SKU-level stock, and forecast output.",
+      "Added pipelines for deadstock detection and restock suggestions.",
+      "Integrated Gemini for product insights and summaries.",
+      "Connected backend services to live dashboards.",
     ],
     keyFeatures: [
       "Real-time inventory tracking",
-      "Forecasting and restock suggestions",
+      "Forecasting and restock planning",
       "Deadstock and SKU analytics",
-      "Business dashboards and insights",
+      "Business dashboards",
     ],
     techStack: [
       "Node.js",
@@ -166,7 +166,7 @@ export const featuredProjects: FeaturedProject[] = [
     title: "EvalForge AI",
     label: "LLM Evaluation & Feedback Engine",
     description:
-      "EvalForge AI is a full-stack app that simulates how AI systems improve response quality using evaluation pipelines, ranking, retrieval, and feedback loops.",
+      "EvalForge AI simulates how AI systems improve response quality through evaluation, ranking, retrieval, and feedback loops.",
     liveUrl: "https://evalforge-ai-frontend.vercel.app/",
     githubUrl: "https://github.com/ArpanNarula/EvalForge-AI-",
     extraLinks: [
@@ -176,16 +176,16 @@ export const featuredProjects: FeaturedProject[] = [
       },
     ],
     backendContributions: [
-      "Built a multi-stage pipeline that generates multiple responses, evaluates them, ranks them, and selects the best output.",
-      "Added scoring using rule-based logic, simulated embedding similarity, and simulated judge-style evaluation.",
-      "Implemented feedback handling so thumbs up and thumbs down can influence ranking weights over time.",
-      "Created retrieval logic to store stronger responses and reuse them for future prompts.",
-      "Split the app into a Next.js frontend and FastAPI backend with a clean full-stack flow.",
+      "Built a pipeline that generates, evaluates, ranks, and selects responses.",
+      "Added rule-based, simulated embedding, and judge-style scoring.",
+      "Implemented feedback logic that updates ranking weight over time.",
+      "Stored stronger responses for later retrieval.",
+      "Split the app into a Next.js frontend and FastAPI backend.",
     ],
     keyFeatures: [
       "Multi-response generation",
-      "Evaluation and score breakdowns",
-      "Ranking and best-response selection",
+      "Score breakdowns",
+      "Response ranking",
       "Feedback and retrieval loop",
     ],
     techStack: [
@@ -207,7 +207,7 @@ export const featuredProjects: FeaturedProject[] = [
       "Improve",
     ],
     note:
-      "Prototype system: generation and evaluation are simulated to show the architecture and workflow clearly.",
+      "Prototype: generation and evaluation are simulated to show the workflow clearly.",
     accent: {
       border:
         "linear-gradient(135deg, rgba(59,130,246,0.58), rgba(167,139,250,0.36), rgba(45,212,191,0.38))",
@@ -221,20 +221,20 @@ export const featuredProjects: FeaturedProject[] = [
     title: "SupportOps Assistant",
     label: "Support Ticketing Platform",
     description:
-      "SupportOps Assistant is a support management tool for engineering teams to handle tickets, recurring issues, and debugging workflows in one place.",
+      "SupportOps Assistant helps engineering teams manage tickets, recurring issues, and debugging workflows in one place.",
     liveUrl: "https://supportops-assistant.vercel.app/",
     githubUrl: "https://github.com/ArpanNarula/SupportOps-Assistant",
     backendContributions: [
-      "Built APIs for ticket creation, updates, status changes, severity, and ownership.",
-      "Designed MongoDB collections for ticket data, issue history, and performance metrics.",
-      "Added logic for spotting recurring issues and surfacing useful support insights.",
-      "Integrated external AI tools for root-cause suggestions during debugging.",
-      "Created analytics endpoints used by dashboards to track support performance.",
+      "Built APIs for ticket creation, updates, status, severity, and ownership.",
+      "Designed MongoDB collections for tickets, issue history, and performance metrics.",
+      "Added logic for spotting recurring issues and surfacing support insights.",
+      "Integrated AI tools for root-cause suggestions.",
+      "Created analytics endpoints for support dashboards.",
     ],
     keyFeatures: [
       "Ticket lifecycle management",
-      "Assignment and prioritization flows",
-      "Support analytics dashboards",
+      "Assignment and prioritization",
+      "Support analytics",
       "AI-assisted debugging suggestions",
     ],
     techStack: [
@@ -264,20 +264,20 @@ export const featuredProjects: FeaturedProject[] = [
     title: "CourtIQ",
     label: "Legal Research Platform",
     description:
-      "CourtIQ is a legal research platform where users can upload documents, search through them, and get relevant case insights faster.",
+      "CourtIQ is a legal research tool for uploading documents, searching content, and finding case insights faster.",
     liveUrl: "https://judicial-ease.vercel.app",
     githubUrl: "https://github.com/ArpanNarula/CourtIQ",
     backendContributions: [
       "Built APIs for document upload, processing, and search.",
-      "Handled metadata and indexing so legal content could be retrieved more efficiently.",
-      "Added summarization workflows to pull useful insights from large documents.",
-      "Connected the search interface with backend processing services and stored results.",
+      "Handled metadata and indexing for faster retrieval.",
+      "Added summarization workflows for large documents.",
+      "Connected the search interface with backend processing and storage.",
     ],
     keyFeatures: [
       "Document upload and processing",
-      "Search across legal content",
+      "Legal content search",
       "Document summaries",
-      "Faster research workflow",
+      "Faster research flow",
     ],
     techStack: [
       "Node.js",
@@ -309,7 +309,7 @@ export const otherProjects: OtherProject[] = [
     title: "Finio",
     label: "Personal Finance App",
     description:
-      "Finio is more of a UI and product design project, focused on budgeting flows, dashboards, and a clean finance experience for younger users.",
+      "Finio is a UI-focused finance app built around budgeting flows, dashboards, and a cleaner experience for younger users.",
     liveUrl: "https://finio-gamma.vercel.app/",
     githubUrl: "https://github.com/ArpanNarula/Finio",
     techStack: ["React.js", "Next.js", "Tailwind CSS", "Figma"],
@@ -326,7 +326,7 @@ export const otherProjects: OtherProject[] = [
     title: "IMDB Sentiment Analysis",
     label: "Movie Review Sentiment App",
     description:
-      "A smaller ML side project that predicts sentiment for movie reviews and was useful for experimenting with NLP and model deployment.",
+      "A smaller ML project for predicting movie review sentiment and exploring NLP deployment.",
     liveUrl:
       "https://huggingface.co/spaces/Ravi1227/movie-sentiment-analysis",
     githubUrl:
@@ -348,10 +348,10 @@ export const experience = {
   company: "Innate Infotech",
   period: "May 2025 - July 2025",
   summary:
-    "Worked on both frontend and backend tasks, handled database changes, fixed bugs, and shipped product updates across ongoing client work.",
+    "Worked across frontend and backend tasks, handled database changes, fixed bugs, and shipped product updates for live client work.",
   highlights: [
     "Built and updated features using PHP and MySQL.",
-    "Handled bug fixes, UI improvements, and backend changes together.",
-    "Worked on day-to-day product updates in a fast-moving team setup.",
+    "Handled bug fixes, UI improvements, and backend changes.",
+    "Shipped day-to-day product updates in a fast-moving team.",
   ],
 };
