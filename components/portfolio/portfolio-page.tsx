@@ -59,19 +59,19 @@ function BackgroundEffects() {
 
       <div
         data-parallax="12"
-        className="absolute inset-x-0 top-[-8rem] h-[26rem] bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.26),transparent_55%)] blur-3xl"
+        className="absolute inset-x-0 top-[-8rem] h-[26rem] bg-[radial-gradient(circle_at_top,rgba(217,119,6,0.16),transparent_58%)] blur-3xl"
       />
       <div
         data-parallax="18"
-        className="animate-drift-slow absolute left-[-10%] top-[8%] h-[28rem] w-[28rem] rounded-full bg-cyan-500/18 blur-[120px]"
+        className="animate-drift-slow absolute left-[-10%] top-[8%] h-[28rem] w-[28rem] rounded-full bg-amber-600/12 blur-[120px]"
       />
       <div
         data-parallax="24"
-        className="animate-drift-delayed absolute right-[-8%] top-[16%] h-[24rem] w-[24rem] rounded-full bg-violet-500/14 blur-[120px]"
+        className="animate-drift-delayed absolute right-[-8%] top-[16%] h-[24rem] w-[24rem] rounded-full bg-emerald-600/10 blur-[120px]"
       />
       <div
         data-parallax="16"
-        className="animate-drift-slow absolute bottom-[-8rem] left-[36%] h-[24rem] w-[24rem] rounded-full bg-blue-500/14 blur-[140px]"
+        className="animate-drift-slow absolute bottom-[-8rem] left-[36%] h-[24rem] w-[24rem] rounded-full bg-stone-500/10 blur-[140px]"
       />
       <div
         data-parallax="10"
@@ -81,7 +81,7 @@ function BackgroundEffects() {
       {particles.map((particle) => (
         <span
           key={`${particle.left}-${particle.top}`}
-          className="particle-dot absolute rounded-full bg-cyan-100/60"
+          className="particle-dot absolute rounded-full bg-amber-100/50"
           style={{
             left: particle.left,
             top: particle.top,
@@ -118,7 +118,7 @@ export function PortfolioPage() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             data-nav
-            className="fixed inset-x-0 top-4 z-30 mx-auto flex w-[min(1160px,calc(100%-1.5rem))] items-center justify-between rounded-[24px] border border-white/10 bg-slate-950/54 px-4 py-3 shadow-[0_18px_80px_rgba(2,6,23,0.24)] backdrop-blur-xl"
+            className="fixed inset-x-0 top-4 z-30 mx-auto flex w-[min(1160px,calc(100%-1.5rem))] items-center justify-between rounded-[24px] border border-white/10 bg-stone-950/64 px-4 py-3 shadow-[0_18px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl"
           >
             <a
               href="#top"
@@ -127,7 +127,7 @@ export function PortfolioPage() {
               Portfolio
             </a>
 
-            <div className="hidden items-center gap-6 text-sm font-medium text-slate-300 md:flex">
+            <div className="hidden items-center gap-6 text-sm font-medium text-stone-300 md:flex">
               {navItems.map((item) => (
                 <a
                   key={item.href}
@@ -181,7 +181,7 @@ export function PortfolioPage() {
             <m.div
               initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
-              className="fixed left-1/2 top-24 z-20 w-[92%] max-w-md -translate-x-1/2 rounded-[28px] border border-white/12 bg-slate-950/90 p-6 shadow-[0_20px_70px_rgba(2,6,23,0.4)] backdrop-blur-2xl sm:hidden"
+              className="fixed left-1/2 top-24 z-20 w-[92%] max-w-md -translate-x-1/2 rounded-[28px] border border-white/12 bg-stone-950/92 p-6 shadow-[0_20px_70px_rgba(0,0,0,0.42)] backdrop-blur-2xl sm:hidden"
             >
               <div className="flex flex-col gap-4 text-slate-200">
                 {navItems.map((item) => (
@@ -199,7 +199,7 @@ export function PortfolioPage() {
                   href="https://github.com/ArpanNarula"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-cyan-200"
+                  className="text-amber-200"
                 >
                   GitHub
                 </a>
@@ -207,7 +207,7 @@ export function PortfolioPage() {
                   href="https://linkedin.com/in/arpan-narula-4a4793253"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-cyan-200"
+                  className="text-amber-200"
                 >
                   LinkedIn
                 </a>
@@ -224,21 +224,21 @@ export function PortfolioPage() {
               <div data-hero-copy className="max-w-[40rem]">
                 <div>
                   <h1 className="text-5xl font-semibold tracking-[-0.07em] text-white md:text-7xl lg:text-[6.4rem]">
-                    <span className="text-glow bg-[linear-gradient(135deg,#ffffff_20%,#dbeafe_45%,#c4b5fd_80%)] bg-clip-text text-transparent">
+                    <span className="text-glow bg-[linear-gradient(135deg,#fffaf0_18%,#f5d58b_48%,#9fd0ad_82%)] bg-clip-text text-transparent">
                       Arpan Narula
                     </span>
                   </h1>
 
-                  <div className="mt-6 text-xl font-medium tracking-[-0.03em] text-cyan-100 md:text-3xl">
+                  <div className="mt-6 text-xl font-medium tracking-[-0.03em] text-amber-100 md:text-3xl">
                     <TypewriterRoles roles={heroRoles} />
                   </div>
 
-                  <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
+                  <p className="mt-7 max-w-2xl text-lg leading-8 text-stone-300">
                     I build products that feel useful, fast, and easy to use,
                     whether the work leans frontend, backend, or both.
                   </p>
 
-                  <p className="mt-4 max-w-2xl text-base leading-8 text-slate-400">
+                  <p className="mt-4 max-w-2xl text-base leading-8 text-stone-400">
                     Most of my work sits between product, backend, and UI. This
                     portfolio brings together dashboards, APIs, support tools,
                     legal tech, and a few smaller experiments.
@@ -284,14 +284,14 @@ export function PortfolioPage() {
 
               <div data-hero-panel className="hero-panel relative">
                 <div className="relative">
-                  <div className="relative overflow-hidden rounded-[34px] p-px shadow-[0_30px_100px_rgba(37,99,235,0.14)]">
-                    <div className="absolute inset-0 rounded-[34px] bg-[linear-gradient(135deg,rgba(59,130,246,0.64),rgba(99,102,241,0.24),rgba(168,85,247,0.42))]" />
+                  <div className="relative overflow-hidden rounded-[34px] p-px shadow-[0_30px_100px_rgba(217,119,6,0.1)]">
+                    <div className="absolute inset-0 rounded-[34px] bg-[linear-gradient(135deg,rgba(217,119,6,0.46),rgba(34,197,94,0.2),rgba(120,113,108,0.28))]" />
                     <div className="glass-surface relative rounded-[33px] p-6 md:p-7">
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.22),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.18),transparent_42%)]" />
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(217,119,6,0.16),transparent_36%),radial-gradient(circle_at_bottom_right,rgba(34,197,94,0.1),transparent_44%)]" />
                       <div className="relative">
                         <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start">
                           <div className="max-w-[26rem]">
-                            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-100/90">
+                            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-100/90">
                               Quick intro
                             </p>
                             <h2 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-white">
@@ -312,7 +312,7 @@ export function PortfolioPage() {
                               "Deployment",
                             ].map((step, index) => (
                               <div key={step} className="flex items-center gap-3">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-sm font-semibold text-cyan-100">
+                                <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-amber-300/20 bg-amber-300/10 text-sm font-semibold text-amber-100">
                                   0{index + 1}
                                 </div>
                                 <div className="flex-1 rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm font-medium text-slate-100">
@@ -352,13 +352,13 @@ export function PortfolioPage() {
                                 key={item.title}
                                 className="rounded-[24px] border border-white/10 bg-white/[0.05] p-4"
                               >
-                                <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-black/20 text-cyan-100">
+                                <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-black/20 text-amber-100">
                                   <Icon size={18} />
                                 </div>
                                 <p className="mt-4 text-sm font-semibold text-white">
                                   {item.title}
                                 </p>
-                                <p className="mt-2 text-sm leading-6 text-slate-400">
+                                <p className="mt-2 text-sm leading-6 text-stone-400">
                                   {item.text}
                                 </p>
                               </div>
@@ -446,7 +446,7 @@ export function PortfolioPage() {
             </div>
 
             <Reveal className="mt-6">
-              <div className="glass-surface rounded-[26px] p-5 text-sm leading-7 text-slate-400">
+              <div className="glass-surface rounded-[26px] p-5 text-sm leading-7 text-stone-400">
                 I’m comfortable working across the stack, depending on what the
                 product needs.
               </div>
@@ -465,52 +465,82 @@ export function PortfolioPage() {
               />
             </Reveal>
 
-            <Reveal className="mt-12">
-              <div className="relative pl-8">
-                <div className="absolute left-3 top-3 bottom-4 w-px bg-gradient-to-b from-cyan-300 via-blue-400/60 to-transparent" />
-                <div className="absolute left-0 top-0 flex h-7 w-7 items-center justify-center rounded-full border border-cyan-300/30 bg-cyan-300/15 shadow-[0_12px_24px_rgba(56,189,248,0.22)]">
-                  <span className="h-2.5 w-2.5 rounded-full bg-cyan-200" />
-                </div>
-
-                <m.article
-                  whileHover={{ x: 4, y: -3 }}
-                  data-contact-card
-                  className="glass-surface rounded-[30px] border-l border-l-cyan-300/30 p-7 shadow-[0_24px_80px_rgba(2,6,23,0.3)]"
-                >
-                  <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-                    <div>
-                      <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-100/80">
-                        Internship
-                      </p>
-                      <h3 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-white">
-                        {experience.title}
-                      </h3>
-                      <p className="mt-1 text-base text-slate-300">
-                        {experience.company}
-                      </p>
+            <div className="mt-12 space-y-8">
+              {experience.map((item, index) => (
+                <Reveal key={`${item.company}-${item.title}`} delay={0.08 * index}>
+                  <div className="relative pl-8">
+                    <div
+                      className={`absolute left-3 top-3 w-px bg-gradient-to-b from-amber-300/70 via-emerald-500/35 to-transparent ${
+                        index === experience.length - 1 ? "bottom-4" : "bottom-[-2rem]"
+                      }`}
+                    />
+                    <div className="absolute left-0 top-0 flex h-7 w-7 items-center justify-center rounded-full border border-amber-300/30 bg-amber-300/12 shadow-[0_12px_24px_rgba(217,119,6,0.18)]">
+                      <span className="h-2.5 w-2.5 rounded-full bg-amber-200" />
                     </div>
-                    <p className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-slate-300">
-                      {experience.period}
-                    </p>
-                  </div>
 
-                  <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300">
-                    {experience.summary}
-                  </p>
-
-                  <div className="mt-6 grid gap-3 md:grid-cols-3">
-                    {experience.highlights.map((item) => (
-                      <div
-                        key={item}
-                        className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-sm leading-6 text-slate-300"
-                      >
-                        {item}
+                    <m.article
+                      whileHover={{ x: 4, y: -3 }}
+                      data-contact-card
+                      className="glass-surface rounded-[24px] border-l border-l-amber-300/30 p-7 shadow-[0_24px_80px_rgba(2,6,23,0.26)]"
+                    >
+                      <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                        <div>
+                          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-amber-100/80">
+                            {item.employmentType}
+                          </p>
+                          <h3 className="mt-3 text-2xl font-semibold text-white">
+                            {item.title}
+                          </h3>
+                          <p className="mt-1 text-base text-stone-300">
+                            {item.company} · {item.location}
+                          </p>
+                        </div>
+                        <p className="w-fit rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-stone-300">
+                          {item.period}
+                        </p>
                       </div>
-                    ))}
+
+                      <p className="mt-6 max-w-3xl text-base leading-8 text-stone-300">
+                        {item.summary}
+                      </p>
+
+                      <div className="mt-6 grid gap-3 md:grid-cols-2">
+                        {item.responsibilities.map((responsibility) => (
+                          <div
+                            key={responsibility}
+                            className="rounded-2xl border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-stone-300"
+                          >
+                            {responsibility}
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="mt-6 flex flex-wrap gap-2.5">
+                        {item.technologies.map((technology) => (
+                          <span
+                            key={`${item.company}-${technology}`}
+                            className="rounded-full border border-amber-200/12 bg-amber-200/[0.07] px-3 py-2 text-xs font-medium text-amber-50/90"
+                          >
+                            {technology}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="mt-6 grid gap-3 md:grid-cols-3">
+                        {item.highlights.map((highlight) => (
+                          <div
+                            key={highlight}
+                            className="rounded-2xl border border-emerald-200/10 bg-emerald-200/[0.045] p-4 text-sm leading-6 text-stone-300"
+                          >
+                            {highlight}
+                          </div>
+                        ))}
+                      </div>
+                    </m.article>
                   </div>
-                </m.article>
-              </div>
-            </Reveal>
+                </Reveal>
+              ))}
+            </div>
           </section>
 
           <section id="contact" className="mx-auto mt-28 max-w-6xl scroll-mt-28">
@@ -528,13 +558,13 @@ export function PortfolioPage() {
                   data-contact-card
                   className="glass-surface rounded-[32px] p-7 shadow-[0_24px_90px_rgba(2,6,23,0.3)]"
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-100/80">
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-100/80">
                     Let&apos;s connect
                   </p>
                   <h3 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white">
                     Open to new opportunities
                   </h3>
-                  <p className="mt-5 max-w-xl text-base leading-8 text-slate-400">
+                  <p className="mt-5 max-w-xl text-base leading-8 text-stone-400">
                     If there’s a role, team, or product where I could help,
                     feel free to reach out.
                   </p>
@@ -542,27 +572,27 @@ export function PortfolioPage() {
                   <div className="mt-8 space-y-4">
                     <a
                       href="mailto:arpannarula9999@gmail.com"
-                      className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-4 text-slate-200 transition hover:border-cyan-300/20 hover:bg-white/[0.06]"
+                      className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-4 text-stone-200 transition hover:border-amber-300/20 hover:bg-white/[0.06]"
                     >
-                      <Mail size={18} className="text-cyan-200" />
+                      <Mail size={18} className="text-amber-200" />
                       arpannarula9999@gmail.com
                     </a>
                     <a
                       href="https://github.com/ArpanNarula"
                       target="_blank"
                       rel="noreferrer"
-                      className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-4 text-slate-200 transition hover:border-cyan-300/20 hover:bg-white/[0.06]"
+                      className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-4 text-stone-200 transition hover:border-amber-300/20 hover:bg-white/[0.06]"
                     >
-                      <Github size={18} className="text-cyan-200" />
+                      <Github size={18} className="text-amber-200" />
                       GitHub
                     </a>
                     <a
                       href="https://linkedin.com/in/arpan-narula-4a4793253"
                       target="_blank"
                       rel="noreferrer"
-                      className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-4 text-slate-200 transition hover:border-cyan-300/20 hover:bg-white/[0.06]"
+                      className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-4 text-stone-200 transition hover:border-amber-300/20 hover:bg-white/[0.06]"
                     >
-                      <Linkedin size={18} className="text-cyan-200" />
+                      <Linkedin size={18} className="text-amber-200" />
                       LinkedIn
                     </a>
                   </div>
@@ -602,7 +632,7 @@ export function PortfolioPage() {
                       whileHover={{ y: -2, scale: 1.01 }}
                       whileTap={{ scale: 0.99 }}
                       type="submit"
-                      className="group inline-flex items-center justify-center gap-3 rounded-2xl border border-cyan-300/20 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(224,242,254,0.92))] px-5 py-3 text-sm font-semibold text-slate-950 shadow-[0_18px_46px_rgba(148,163,184,0.16)]"
+                      className="group inline-flex items-center justify-center gap-3 rounded-2xl border border-amber-300/20 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(254,243,199,0.9))] px-5 py-3 text-sm font-semibold text-stone-950 shadow-[0_18px_46px_rgba(217,119,6,0.12)]"
                     >
                       <span>Send Message</span>
                       <ArrowUpRight

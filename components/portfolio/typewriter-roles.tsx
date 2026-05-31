@@ -43,7 +43,7 @@ export function TypewriterRoles({ roles }: TypewriterRolesProps) {
   return (
     <span className="inline-flex min-h-[1.5em] items-center gap-2">
       <span>{displayText}</span>
-      <span className="h-6 w-px animate-caret rounded-full bg-cyan-200/90" />
+      <span className="h-6 w-px animate-caret rounded-full bg-amber-200/90" />
     </span>
   );
 }

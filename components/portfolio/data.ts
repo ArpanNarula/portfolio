@@ -41,6 +41,18 @@ export type SkillGroup = {
   items: string[];
 };
 
+export type ExperienceItem = {
+  title: string;
+  company: string;
+  employmentType: string;
+  period: string;
+  location: string;
+  summary: string;
+  responsibilities: string[];
+  technologies: string[];
+  highlights: string[];
+};
+
 export const navItems = [
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
@@ -56,9 +68,9 @@ export const heroRoles = [
 
 export const heroHighlights = [
   "React + Next.js",
-  "Node + Express",
-  "MongoDB + SQL",
-  "AI Integrations",
+  "Python + SQL",
+  "APIs + Data",
+  "ML + GenAI",
 ];
 
 export const proofPoints = [
@@ -91,26 +103,26 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Data & Backend",
-    subtitle: "APIs and storage",
+    subtitle: "Systems and analysis",
     items: [
       "MongoDB",
       "SQL",
+      "Pandas",
+      "NumPy",
       "Firebase",
       "REST APIs",
-      "Schema Design",
-      "Authentication",
     ],
   },
   {
-    title: "Tools",
-    subtitle: "Everyday workflow",
+    title: "AI & Tools",
+    subtitle: "Applied work",
     items: [
       "Git",
       "GitHub",
       "Vercel",
       "Postman",
-      "Framer Motion",
-      "Figma",
+      "GenAI",
+      "RAG",
     ],
   },
 ];
@@ -154,11 +166,11 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     accent: {
       border:
-        "linear-gradient(135deg, rgba(56,189,248,0.6), rgba(99,102,241,0.38), rgba(168,85,247,0.5))",
+        "linear-gradient(135deg, rgba(217,119,6,0.5), rgba(34,197,94,0.24), rgba(148,163,184,0.3))",
       preview:
-        "radial-gradient(circle at top left, rgba(56,189,248,0.32), transparent 40%), linear-gradient(140deg, rgba(7,14,32,0.98), rgba(12,24,52,0.88))",
-      glow: "rgba(56, 189, 248, 0.24)",
-      pill: "rgba(56, 189, 248, 0.12)",
+        "radial-gradient(circle at top left, rgba(217,119,6,0.2), transparent 38%), linear-gradient(140deg, rgba(18,18,16,0.98), rgba(24,32,25,0.9))",
+      glow: "rgba(217, 119, 6, 0.16)",
+      pill: "rgba(217, 119, 6, 0.11)",
     },
     featured: true,
   },
@@ -210,11 +222,11 @@ export const featuredProjects: FeaturedProject[] = [
       "Prototype: generation and evaluation are simulated to show the workflow clearly.",
     accent: {
       border:
-        "linear-gradient(135deg, rgba(59,130,246,0.58), rgba(167,139,250,0.36), rgba(45,212,191,0.38))",
+        "linear-gradient(135deg, rgba(34,197,94,0.46), rgba(217,119,6,0.22), rgba(148,163,184,0.28))",
       preview:
-        "radial-gradient(circle at top left, rgba(96,165,250,0.32), transparent 40%), linear-gradient(140deg, rgba(7,12,30,0.98), rgba(18,18,44,0.9))",
-      glow: "rgba(96, 165, 250, 0.22)",
-      pill: "rgba(96, 165, 250, 0.12)",
+        "radial-gradient(circle at top left, rgba(34,197,94,0.18), transparent 40%), linear-gradient(140deg, rgba(15,18,16,0.98), rgba(24,27,22,0.92))",
+      glow: "rgba(34, 197, 94, 0.14)",
+      pill: "rgba(34, 197, 94, 0.1)",
     },
   },
   {
@@ -253,11 +265,11 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     accent: {
       border:
-        "linear-gradient(135deg, rgba(59,130,246,0.55), rgba(14,165,233,0.34), rgba(45,212,191,0.4))",
+        "linear-gradient(135deg, rgba(120,113,108,0.5), rgba(34,197,94,0.22), rgba(217,119,6,0.26))",
       preview:
-        "radial-gradient(circle at top left, rgba(96,165,250,0.3), transparent 40%), linear-gradient(140deg, rgba(6,12,28,0.98), rgba(8,24,38,0.92))",
-      glow: "rgba(96, 165, 250, 0.2)",
-      pill: "rgba(59, 130, 246, 0.12)",
+        "radial-gradient(circle at top left, rgba(120,113,108,0.22), transparent 38%), linear-gradient(140deg, rgba(15,15,14,0.98), rgba(27,29,24,0.92))",
+      glow: "rgba(120, 113, 108, 0.16)",
+      pill: "rgba(120, 113, 108, 0.12)",
     },
   },
   {
@@ -295,11 +307,11 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     accent: {
       border:
-        "linear-gradient(135deg, rgba(129,140,248,0.55), rgba(99,102,241,0.34), rgba(168,85,247,0.42))",
+        "linear-gradient(135deg, rgba(217,119,6,0.42), rgba(120,113,108,0.3), rgba(34,197,94,0.22))",
       preview:
-        "radial-gradient(circle at top left, rgba(129,140,248,0.3), transparent 42%), linear-gradient(140deg, rgba(10,10,28,0.98), rgba(24,16,46,0.92))",
-      glow: "rgba(129, 140, 248, 0.2)",
-      pill: "rgba(129, 140, 248, 0.13)",
+        "radial-gradient(circle at top left, rgba(217,119,6,0.16), transparent 42%), linear-gradient(140deg, rgba(18,17,15,0.98), rgba(29,26,21,0.92))",
+      glow: "rgba(217, 119, 6, 0.14)",
+      pill: "rgba(217, 119, 6, 0.1)",
     },
   },
 ];
@@ -315,11 +327,11 @@ export const otherProjects: OtherProject[] = [
     techStack: ["React.js", "Next.js", "Tailwind CSS", "Figma"],
     accent: {
       border:
-        "linear-gradient(135deg, rgba(45,212,191,0.48), rgba(56,189,248,0.3), rgba(99,102,241,0.34))",
+        "linear-gradient(135deg, rgba(34,197,94,0.4), rgba(217,119,6,0.18), rgba(148,163,184,0.24))",
       preview:
-        "radial-gradient(circle at top left, rgba(45,212,191,0.28), transparent 42%), linear-gradient(140deg, rgba(7,14,30,0.96), rgba(12,30,42,0.9))",
-      glow: "rgba(45, 212, 191, 0.18)",
-      pill: "rgba(45, 212, 191, 0.1)",
+        "radial-gradient(circle at top left, rgba(34,197,94,0.16), transparent 42%), linear-gradient(140deg, rgba(14,18,16,0.96), rgba(24,29,23,0.9))",
+      glow: "rgba(34, 197, 94, 0.13)",
+      pill: "rgba(34, 197, 94, 0.09)",
     },
   },
   {
@@ -334,24 +346,70 @@ export const otherProjects: OtherProject[] = [
     techStack: ["Python", "TensorFlow", "NLP", "Hugging Face"],
     accent: {
       border:
-        "linear-gradient(135deg, rgba(148,163,184,0.44), rgba(96,165,250,0.24), rgba(99,102,241,0.28))",
+        "linear-gradient(135deg, rgba(148,163,184,0.38), rgba(120,113,108,0.26), rgba(217,119,6,0.18))",
       preview:
-        "radial-gradient(circle at top left, rgba(148,163,184,0.22), transparent 40%), linear-gradient(140deg, rgba(9,12,24,0.95), rgba(19,22,42,0.88))",
-      glow: "rgba(148, 163, 184, 0.16)",
+        "radial-gradient(circle at top left, rgba(148,163,184,0.18), transparent 40%), linear-gradient(140deg, rgba(15,15,15,0.95), rgba(24,23,21,0.88))",
+      glow: "rgba(148, 163, 184, 0.12)",
       pill: "rgba(148, 163, 184, 0.1)",
     },
   },
 ];
 
-export const experience = {
-  title: "Web Developer Intern",
-  company: "Innate Infotech",
-  period: "May 2025 - July 2025",
-  summary:
-    "Worked across frontend and backend tasks, handled database changes, fixed bugs, and shipped product updates for live client work.",
-  highlights: [
-    "Built and updated features using PHP and MySQL.",
-    "Handled bug fixes, UI improvements, and backend changes.",
-    "Shipped day-to-day product updates in a fast-moving team.",
-  ],
-};
+export const experience: ExperienceItem[] = [
+  {
+    title: "Apprentice Data Scientist",
+    company: "MicroGCC",
+    employmentType: "Apprenticeship",
+    period: "May 2026 - Present",
+    location: "Remote - Bangalore, India office",
+    summary:
+      "Selected for MicroGCC's Technology Innovation & Partnerships Apprenticeship Program. Working remotely on applied machine learning, data science, GenAI, analytics automation, AI-powered business solutions, and intelligent workflow systems.",
+    responsibilities: [
+      "Develop and evaluate machine learning solutions for prediction, classification, and business intelligence use cases.",
+      "Build data analysis and automation workflows using Python, SQL, Pandas, and modern data science tools.",
+      "Work on GenAI applications, RAG pipelines, vector databases, prompt engineering, and AI-powered assistants.",
+      "Contribute to AI agent and workflow automation initiatives for operational efficiency and decision support.",
+      "Generate actionable business insights from structured and unstructured data.",
+      "Collaborate with product, business, and engineering teams to solve real-world problems using AI and data.",
+    ],
+    technologies: [
+      "Python",
+      "SQL",
+      "Pandas",
+      "NumPy",
+      "Scikit-Learn",
+      "Machine Learning",
+      "Data Analytics",
+      "GenAI",
+      "RAG",
+      "Vector Databases",
+      "AI Agents",
+      "Prompt Engineering",
+    ],
+    highlights: [
+      "Selected for a competitive 1-year Data Science apprenticeship program with FTE conversion opportunity based on performance.",
+      "Working on production-oriented AI, analytics, and automation projects with real business impact.",
+      "Remote-first role with collaboration across data, AI, and business teams.",
+    ],
+  },
+  {
+    title: "Web Developer Intern",
+    company: "Innate Infotech",
+    employmentType: "Internship",
+    period: "May 2025 - July 2025",
+    location: "On-site",
+    summary:
+      "Worked across frontend and backend tasks, handled database changes, fixed bugs, and shipped product updates for live client work.",
+    responsibilities: [
+      "Built and updated features using PHP and MySQL.",
+      "Handled bug fixes, UI improvements, and backend changes.",
+      "Shipped day-to-day product updates in a fast-moving team.",
+    ],
+    technologies: ["PHP", "MySQL", "Frontend", "Backend"],
+    highlights: [
+      "Contributed to active client work across frontend and backend tasks.",
+      "Worked with database changes, bug fixes, and product updates.",
+      "Built practical experience inside a fast-moving development team.",
+    ],
+  },
+];

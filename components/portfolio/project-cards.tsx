@@ -59,13 +59,13 @@ export function FeaturedProjectCard({
 
         <div className="relative grid gap-8 lg:grid-cols-[1.18fr_0.82fr] lg:items-start">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-slate-400">
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-stone-400">
               {project.label}
             </p>
             <h3 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-white">
               {project.title}
             </h3>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300">
+            <p className="mt-5 max-w-2xl text-base leading-8 text-stone-300">
               {project.description}
             </p>
 
@@ -85,13 +85,13 @@ export function FeaturedProjectCard({
             </div>
 
             <div className="mt-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">
                 What I Worked On
               </p>
-              <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-300">
+              <ul className="mt-4 space-y-3 text-sm leading-7 text-stone-300">
                 {project.backendContributions.map((item) => (
                   <li key={item} className="flex gap-3">
-                    <span className="mt-2 h-2 w-2 flex-none rounded-full bg-cyan-300" />
+                    <span className="mt-2 h-2 w-2 flex-none rounded-full bg-amber-300" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -99,7 +99,7 @@ export function FeaturedProjectCard({
             </div>
 
             <div className="mt-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">
                 Tech Stack
               </p>
               <div className="mt-4 flex flex-wrap gap-2.5">
@@ -150,7 +150,7 @@ export function FeaturedProjectCard({
                 href={project.liveUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center gap-2 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 px-4 py-3 text-sm font-semibold text-cyan-50 shadow-[0_16px_46px_rgba(56,189,248,0.14)]"
+                className="group inline-flex items-center gap-2 rounded-2xl border border-amber-300/20 bg-amber-300/10 px-4 py-3 text-sm font-semibold text-amber-50 shadow-[0_16px_46px_rgba(217,119,6,0.12)]"
               >
                 <ArrowUpRight size={16} className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 Live Demo
@@ -165,7 +165,7 @@ export function FeaturedProjectCard({
           >
             <div className="pointer-events-none absolute -right-12 top-0 h-32 w-32 rounded-full bg-white/10 blur-3xl" />
             <div className="relative">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-100/90">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-100/90">
                 Quick Look
               </p>
 
@@ -176,7 +176,7 @@ export function FeaturedProjectCard({
                       {node}
                     </div>
                     {index < project.architecture.length - 1 ? (
-                      <span className="text-cyan-100">→</span>
+                      <span className="text-amber-100">→</span>
                     ) : null}
                   </div>
                 ))}
@@ -194,8 +194,8 @@ export function FeaturedProjectCard({
               </div>
 
               {project.note ? (
-                <div className="mt-6 rounded-2xl border border-cyan-200/10 bg-black/20 px-4 py-4 text-sm leading-6 text-slate-300 backdrop-blur-sm">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-cyan-100/80">
+                <div className="mt-6 rounded-2xl border border-amber-200/10 bg-black/20 px-4 py-4 text-sm leading-6 text-stone-300 backdrop-blur-sm">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-100/80">
                     Current Build
                   </p>
                   <p className="mt-2">{project.note}</p>
@@ -236,13 +236,13 @@ export function OtherProjectCard({ project }: OtherProjectCardProps) {
           className="relative rounded-[20px] border border-white/10 p-4"
           style={{ background: project.accent.preview }}
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-100/80">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-100/80">
             {project.label}
           </p>
           <h3 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-white">
             {project.title}
           </h3>
-          <p className="mt-4 text-sm leading-7 text-slate-300">
+          <p className="mt-4 text-sm leading-7 text-stone-300">
             {project.description}
           </p>
         </div>

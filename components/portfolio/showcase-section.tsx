@@ -21,9 +21,9 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 const cardAccents = [
-  "linear-gradient(180deg, rgba(15,23,42,0.92), rgba(17,24,39,0.78))",
-  "linear-gradient(180deg, rgba(10,21,44,0.94), rgba(19,27,48,0.8))",
-  "linear-gradient(180deg, rgba(16,18,42,0.94), rgba(23,23,46,0.8))",
+  "linear-gradient(180deg, rgba(28,25,23,0.94), rgba(20,20,18,0.8))",
+  "linear-gradient(180deg, rgba(24,29,22,0.94), rgba(19,24,20,0.8))",
+  "linear-gradient(180deg, rgba(33,29,22,0.94), rgba(24,22,19,0.8))",
 ];
 
 export function ShowcaseSection({
@@ -40,7 +40,7 @@ export function ShowcaseSection({
                 key={point.title}
                 className="glass-surface rounded-[28px] p-6 shadow-[0_20px_80px_rgba(2,6,23,0.28)]"
               >
-                <p className="text-sm font-medium text-slate-400">
+                <p className="text-sm font-medium text-stone-400">
                   {point.title}
                 </p>
                 <p className="mt-3 text-lg font-semibold tracking-[-0.03em] text-white">
@@ -54,22 +54,22 @@ export function ShowcaseSection({
 
       <div data-showcase className="hidden lg:block">
         <div className="relative rounded-[40px] p-px">
-          <div className="absolute inset-0 rounded-[40px] bg-[linear-gradient(135deg,rgba(255,255,255,0.16),rgba(99,102,241,0.32),rgba(56,189,248,0.22),rgba(15,23,42,0.18))]" />
+          <div className="absolute inset-0 rounded-[40px] bg-[linear-gradient(135deg,rgba(255,255,255,0.12),rgba(217,119,6,0.28),rgba(34,197,94,0.16),rgba(28,25,23,0.2))]" />
           <div
             data-showcase-pin
             className="glass-surface relative overflow-hidden rounded-[39px] px-9 py-10 xl:px-10 xl:py-12"
           >
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(96,165,250,0.18),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.16),transparent_34%)]" />
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(217,119,6,0.12),transparent_34%),linear-gradient(225deg,rgba(34,197,94,0.08),transparent_36%)]" />
 
             <div className="relative grid gap-12 lg:grid-cols-[0.78fr_1fr] lg:items-center">
               <div className="max-w-md">
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-100/80">
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-amber-100/80">
                   Build Mindset
                 </p>
                 <h2 className="mt-4 text-4xl font-semibold tracking-[-0.05em] text-white">
                   Thoughtful products, solid systems, and work that ships.
                 </h2>
-                <p className="mt-6 text-base leading-8 text-slate-400">
+                <p className="mt-6 text-base leading-8 text-stone-400">
                   I care about the full product experience, but I usually think
                   about it in layers: what gets built, how it works, and how it
                   reaches users.
@@ -103,10 +103,10 @@ export function ShowcaseSection({
                       style={{ background: cardAccents[index] ?? cardAccents[0] }}
                     >
                       <div className="flex items-center justify-between gap-4">
-                        <div className="inline-flex h-14 w-14 items-center justify-center rounded-[20px] border border-cyan-300/20 bg-cyan-300/10 text-cyan-100 shadow-[0_18px_40px_rgba(56,189,248,0.14)]">
+                        <div className="inline-flex h-14 w-14 items-center justify-center rounded-[20px] border border-amber-300/20 bg-amber-300/10 text-amber-100 shadow-[0_18px_40px_rgba(217,119,6,0.12)]">
                           <Icon size={22} />
                         </div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-100/70">
+                        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-100/70">
                           {point.title}
                         </p>
                       </div>
@@ -121,7 +121,7 @@ export function ShowcaseSection({
                         {highlightPair.map((item) => (
                           <div
                             key={`${point.title}-${item}`}
-                            className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-slate-300"
+                            className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-stone-300"
                           >
                             {item}
                           </div>

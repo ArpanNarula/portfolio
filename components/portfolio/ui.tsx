@@ -54,7 +54,7 @@ export function SectionHeading({
     >
       <p
         data-section-eyebrow
-        className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200/80"
+        className="text-xs font-semibold uppercase tracking-[0.3em] text-amber-100/80"
       >
         {eyebrow}
       </p>
@@ -67,7 +67,7 @@ export function SectionHeading({
       {description ? (
         <p
           data-section-description
-          className="mt-5 text-base leading-8 text-slate-400"
+          className="mt-5 text-base leading-8 text-stone-400"
         >
           {description}
         </p>
@@ -91,7 +91,7 @@ export function ActionButton({
     primary:
       "bg-white text-slate-950 shadow-[0_18px_40px_rgba(255,255,255,0.12)]",
     secondary:
-      "border border-cyan-400/20 bg-cyan-400/10 text-cyan-50 shadow-[0_18px_48px_rgba(56,189,248,0.14)]",
+      "border border-amber-300/20 bg-amber-300/10 text-amber-50 shadow-[0_18px_48px_rgba(217,119,6,0.12)]",
     ghost:
       "border border-white/12 bg-white/[0.04] text-white shadow-[0_18px_48px_rgba(15,23,42,0.22)]",
   };
